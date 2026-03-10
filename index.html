@@ -333,70 +333,87 @@
     margin-top: 2px;
   }
 
-  /* ── Detail panel ── */
-  .detail-panel {
-    position: fixed;
-    right: 0; top: 0; bottom: 0;
-    width: min(420px, 100vw);
-    background: var(--bg2);
-    border-left: 1px solid var(--border);
-    z-index: 100;
-    transform: translateX(100%);
-    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    overflow-y: auto;
-    overscroll-behavior: contain;
-  }
 
-  .detail-panel.open { transform: translateX(0); }
 
+  /* ── Detail Modal ── */
   .detail-overlay {
     position: fixed; inset: 0;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.65);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     z-index: 99;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.25s;
+    transition: opacity 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
   }
 
   .detail-overlay.open { opacity: 1; pointer-events: all; }
 
-  .detail-inner { padding: 32px 28px 48px; }
+  .detail-panel {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    z-index: 100;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    transform: scale(0.95) translateY(12px);
+    opacity: 0;
+    transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.18s ease;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.05);
+  }
+
+  .detail-overlay.open .detail-panel {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+
+  .detail-inner { padding: 36px 36px 40px; }
 
   .detail-close {
     position: absolute;
-    top: 20px; right: 20px;
+    top: 16px; right: 16px;
     background: rgba(255,255,255,0.07);
     border: none;
     color: var(--text-mid);
     width: 36px; height: 36px;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 16px;
     display: flex; align-items: center; justify-content: center;
-    transition: background 0.15s;
+    transition: background 0.15s, color 0.15s;
+    flex-shrink: 0;
   }
 
-  .detail-close:hover { background: rgba(255,255,255,0.13); }
+  .detail-close:hover { background: rgba(255,255,255,0.14); color: var(--text); }
 
   .detail-tier-tag {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    padding: 5px 12px;
+    padding: 5px 14px;
     border-radius: 20px;
     font-family: 'DM Mono', monospace;
     font-size: 11px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
   }
 
   .detail-title {
     font-family: 'Playfair Display', serif;
-    font-size: 28px;
+    font-size: 32px;
     font-weight: 700;
-    margin-bottom: 20px;
-    line-height: 1.2;
+    margin-bottom: 4px;
+    line-height: 1.15;
+    padding-right: 40px;
   }
 
   .detail-divider {
@@ -406,25 +423,32 @@
   }
 
   .detail-body {
-    font-size: 14px;
+    font-size: 15px;
     color: var(--text-mid);
-    line-height: 1.75;
+    line-height: 1.8;
   }
 
   .detail-body strong { color: var(--text); font-weight: 600; }
 
   .detail-note {
-    margin-top: 20px;
-    padding: 14px 16px;
-    border-radius: 8px;
-    font-size: 13px;
-    line-height: 1.6;
+    margin-top: 16px;
+    padding: 14px 18px;
+    border-radius: 10px;
+    font-size: 13.5px;
+    line-height: 1.65;
     border: 1px solid;
   }
 
   .note-warning { background: rgba(224,126,90,0.08); border-color: rgba(224,126,90,0.25); color: #e9a882; }
   .note-info    { background: rgba(192,200,216,0.07); border-color: rgba(192,200,216,0.2); color: #b0bac8; }
   .note-success { background: rgba(143,191,138,0.07); border-color: rgba(143,191,138,0.2); color: #9fc89a; }
+
+  @media (max-width: 600px) {
+    .detail-overlay { padding: 12px; align-items: flex-end; }
+    .detail-panel { border-radius: 20px 20px 12px 12px; max-height: 85vh; }
+    .detail-inner { padding: 28px 24px 32px; }
+    .detail-title { font-size: 26px; }
+  }
 
   .search-clear {
     position: absolute;
@@ -600,10 +624,11 @@
 </head>
 <body>
 
-<div class="detail-overlay" id="overlay"></div>
-<div class="detail-panel" id="detailPanel">
-  <div class="detail-inner" id="detailInner">
-    <button class="detail-close" id="detailClose">✕</button>
+<div class="detail-overlay" id="overlay">
+  <div class="detail-panel" id="detailPanel">
+    <div class="detail-inner" id="detailInner">
+      <button class="detail-close" id="detailClose">✕</button>
+    </div>
   </div>
 </div>
 
@@ -1052,7 +1077,9 @@ function closeDetail() {
   document.body.style.overflow = '';
 }
 
-document.getElementById('overlay').addEventListener('click', closeDetail);
+document.getElementById('overlay').addEventListener('click', function(e) {
+  if (e.target === this) closeDetail();
+});
 
 // ── Filter by tier ──
 document.querySelectorAll('.filter-btn').forEach(btn => {
