@@ -3,650 +3,181 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Supplement-Marken Tier-List 2026</title>
+<title>Supplement Brand Tier-List 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0d0f14;
-    --bg2: #13161e;
-    --bg3: #1a1e28;
-    --border: rgba(255,255,255,0.07);
-    --text: #e8e6e0;
-    --text-dim: #7a7870;
-    --text-mid: #b0ae9f;
-
-    --t1-color: #d4a843;
-    --t1-bg: rgba(212,168,67,0.08);
-    --t1-border: rgba(212,168,67,0.25);
-
-    --t2-color: #c0c8d8;
-    --t2-bg: rgba(192,200,216,0.07);
-    --t2-border: rgba(192,200,216,0.2);
-
-    --t3-color: #8fbf8a;
-    --t3-bg: rgba(143,191,138,0.07);
-    --t3-border: rgba(143,191,138,0.2);
-
-    --t4-color: #e07e5a;
-    --t4-bg: rgba(224,126,90,0.07);
-    --t4-border: rgba(224,126,90,0.2);
-
-    --t5-color: #c45c5c;
-    --t5-bg: rgba(196,92,92,0.07);
-    --t5-border: rgba(196,92,92,0.2);
+    --bg:#0d0f14;--bg2:#13161e;--bg3:#1a1e28;
+    --border:rgba(255,255,255,0.07);
+    --text:#e8e6e0;--text-dim:#7a7870;--text-mid:#b0ae9f;
+    --t1-color:#d4a843;--t1-bg:rgba(212,168,67,0.08);--t1-border:rgba(212,168,67,0.25);
+    --t2-color:#c0c8d8;--t2-bg:rgba(192,200,216,0.07);--t2-border:rgba(192,200,216,0.2);
+    --t3-color:#8fbf8a;--t3-bg:rgba(143,191,138,0.07);--t3-border:rgba(143,191,138,0.2);
+    --t4-color:#e07e5a;--t4-bg:rgba(224,126,90,0.07);--t4-border:rgba(224,126,90,0.2);
+    --t5-color:#c45c5c;--t5-bg:rgba(196,92,92,0.07);--t5-border:rgba(196,92,92,0.2);
   }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
-    line-height: 1.6;
-    min-height: 100vh;
-  }
-
-  /* ── Noise overlay ── */
-  body::before {
-    content: '';
-    position: fixed; inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.5;
-  }
-
-  .page-wrap {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 24px 80px;
-    position: relative; z-index: 1;
-  }
-
-  /* ── Header ── */
-  header {
-    padding: 64px 0 48px;
-    border-bottom: 1px solid var(--border);
-    margin-bottom: 48px;
-  }
-
-  .header-eyebrow {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--text-dim);
-    margin-bottom: 16px;
-  }
-
-  header h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(32px, 5vw, 56px);
-    font-weight: 900;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    margin-bottom: 16px;
-    background: linear-gradient(135deg, #e8e6e0 30%, #a09a8a);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .header-meta {
-    font-size: 14px;
-    color: var(--text-dim);
-    display: flex;
-    gap: 24px;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-
-  .header-meta span {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .dot { width: 6px; height: 6px; border-radius: 50%; background: #3d8f5a; display: inline-block; }
-
-  /* ── Filter bar ── */
-  .filter-bar {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-    padding: 16px 20px;
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-  }
-
-  .filter-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text-dim);
-    display: flex;
-    align-items: center;
-    margin-right: 8px;
-    white-space: nowrap;
-  }
-
-  .filter-btn {
-    background: transparent;
-    border: 1px solid var(--border);
-    color: var(--text-mid);
-    padding: 6px 14px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    transition: all 0.15s;
-    white-space: nowrap;
-  }
-
-  .filter-btn:hover { border-color: rgba(255,255,255,0.2); color: var(--text); }
-  .filter-btn.active { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.25); color: #fff; }
-
-  .filter-btn[data-tier="1"].active { background: var(--t1-bg); border-color: var(--t1-border); color: var(--t1-color); }
-  .filter-btn[data-tier="2"].active { background: var(--t2-bg); border-color: var(--t2-border); color: var(--t2-color); }
-  .filter-btn[data-tier="3"].active { background: var(--t3-bg); border-color: var(--t3-border); color: var(--t3-color); }
-  .filter-btn[data-tier="4"].active { background: var(--t4-bg); border-color: var(--t4-border); color: var(--t4-color); }
-  .filter-btn[data-tier="5"].active { background: var(--t5-bg); border-color: var(--t5-border); color: var(--t5-color); }
-
-  /* ── Search ── */
-  .search-wrap {
-    position: relative;
-    margin-bottom: 40px;
-  }
-
-  .search-input {
-    width: 100%;
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    color: var(--text);
-    padding: 14px 20px 14px 48px;
-    border-radius: 10px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
-    outline: none;
-    transition: border-color 0.15s;
-  }
-
-  .search-input:focus { border-color: rgba(255,255,255,0.2); }
-  .search-input::placeholder { color: var(--text-dim); }
-
-  .search-icon {
-    position: absolute;
-    left: 16px; top: 50%;
-    transform: translateY(-50%);
-    color: var(--text-dim);
-    pointer-events: none;
-    font-size: 18px;
-  }
-
-  /* ── Tier section ── */
-  .tier-section {
-    margin-bottom: 32px;
-    border-radius: 14px;
-    overflow: hidden;
-    border: 1px solid var(--border);
-    transition: opacity 0.2s;
-  }
-
-  .tier-section.hidden { display: none; }
-
-  .tier-header {
-    padding: 20px 24px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    cursor: pointer;
-    user-select: none;
-    transition: background 0.15s;
-  }
-
-  .tier-header:hover { filter: brightness(1.05); }
-
-  .tier-1 .tier-header { background: linear-gradient(135deg, rgba(212,168,67,0.15) 0%, rgba(212,168,67,0.05) 100%); border-bottom: 1px solid var(--t1-border); }
-  .tier-2 .tier-header { background: linear-gradient(135deg, rgba(192,200,216,0.1) 0%, rgba(192,200,216,0.03) 100%); border-bottom: 1px solid var(--t2-border); }
-  .tier-3 .tier-header { background: linear-gradient(135deg, rgba(143,191,138,0.1) 0%, rgba(143,191,138,0.03) 100%); border-bottom: 1px solid var(--t3-border); }
-  .tier-4 .tier-header { background: linear-gradient(135deg, rgba(224,126,90,0.1) 0%, rgba(224,126,90,0.03) 100%); border-bottom: 1px solid var(--t4-border); }
-  .tier-5 .tier-header { background: linear-gradient(135deg, rgba(196,92,92,0.1) 0%, rgba(196,92,92,0.03) 100%); border-bottom: 1px solid var(--t5-border); }
-
-  .tier-badge {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px; height: 48px;
-    border-radius: 10px;
-    font-size: 22px;
-    flex-shrink: 0;
-  }
-
-  .tier-1 .tier-badge { background: rgba(212,168,67,0.15); }
-  .tier-2 .tier-badge { background: rgba(192,200,216,0.1); }
-  .tier-3 .tier-badge { background: rgba(143,191,138,0.1); }
-  .tier-4 .tier-badge { background: rgba(224,126,90,0.1); }
-  .tier-5 .tier-badge { background: rgba(196,92,92,0.1); }
-
-  .tier-title-group { flex: 1; }
-
-  .tier-number {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    margin-bottom: 2px;
-  }
-
-  .tier-1 .tier-number { color: var(--t1-color); }
-  .tier-2 .tier-number { color: var(--t2-color); }
-  .tier-3 .tier-number { color: var(--t3-color); }
-  .tier-4 .tier-number { color: var(--t4-color); }
-  .tier-5 .tier-number { color: var(--t5-color); }
-
-  .tier-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--text);
-  }
-
-  .tier-desc {
-    font-size: 13px;
-    color: var(--text-dim);
-    margin-top: 2px;
-  }
-
-  .tier-count {
-    font-family: 'DM Mono', monospace;
-    font-size: 13px;
-    color: var(--text-dim);
-    background: rgba(255,255,255,0.05);
-    padding: 4px 10px;
-    border-radius: 20px;
-    white-space: nowrap;
-  }
-
-  .tier-chevron {
-    color: var(--text-dim);
-    font-size: 18px;
-    transition: transform 0.2s;
-    flex-shrink: 0;
-  }
-
-  .tier-section.collapsed .tier-chevron { transform: rotate(-90deg); }
-
-  /* ── Brand grid ── */
-  .brand-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1px;
-    background: var(--border);
-    overflow: hidden;
-  }
-
-  .tier-section.collapsed .brand-grid { display: none; }
-
-  .brand-card {
-    background: var(--bg);
-    padding: 14px 18px;
-    cursor: pointer;
-    transition: background 0.12s;
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    position: relative;
-  }
-
-  .brand-card:hover { background: var(--bg3); }
-
-  .brand-card.no-match { opacity: 0.15; pointer-events: none; }
-
-  .brand-dot {
-    width: 7px; height: 7px;
-    border-radius: 50%;
-    margin-top: 6px;
-    flex-shrink: 0;
-  }
-
-  .tier-1 .brand-dot { background: var(--t1-color); }
-  .tier-2 .brand-dot { background: var(--t2-color); }
-  .tier-3 .brand-dot { background: var(--t3-color); }
-  .tier-4 .brand-dot { background: var(--t4-color); }
-  .tier-5 .brand-dot { background: var(--t5-color); }
-
-  .brand-name {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--text);
-    line-height: 1.4;
-  }
-
-  .brand-warning {
-    font-size: 11px;
-    color: var(--t4-color);
-    margin-top: 2px;
-  }
-
-
-
-  /* ── Detail Modal ── */
-  .detail-overlay {
-    position: fixed; inset: 0;
-    background: rgba(0,0,0,0.65);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    z-index: 99;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 24px;
-  }
-
-  .detail-overlay.open { opacity: 1; pointer-events: all; }
-
-  .detail-panel {
-    position: relative;
-    width: 100%;
-    max-width: 600px;
-    max-height: 90vh;
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    z-index: 100;
-    overflow-y: auto;
-    overscroll-behavior: contain;
-    transform: scale(0.95) translateY(12px);
-    opacity: 0;
-    transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.18s ease;
-    box-shadow: 0 32px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.05);
-  }
-
-  .detail-overlay.open .detail-panel {
-    transform: scale(1) translateY(0);
-    opacity: 1;
-  }
-
-  .detail-inner { padding: 36px 36px 40px; }
-
-  .detail-close {
-    position: absolute;
-    top: 16px; right: 16px;
-    background: rgba(255,255,255,0.07);
-    border: none;
-    color: var(--text-mid);
-    width: 36px; height: 36px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    display: flex; align-items: center; justify-content: center;
-    transition: background 0.15s, color 0.15s;
-    flex-shrink: 0;
-  }
-
-  .detail-close:hover { background: rgba(255,255,255,0.14); color: var(--text); }
-
-  .detail-tier-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 5px 14px;
-    border-radius: 20px;
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 14px;
-  }
-
-  .detail-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 4px;
-    line-height: 1.15;
-    padding-right: 40px;
-  }
-
-  .detail-divider {
-    height: 1px;
-    background: var(--border);
-    margin: 20px 0;
-  }
-
-  .detail-body {
-    font-size: 15px;
-    color: var(--text-mid);
-    line-height: 1.8;
-  }
-
-  .detail-body strong { color: var(--text); font-weight: 600; }
-
-  .detail-note {
-    margin-top: 16px;
-    padding: 14px 18px;
-    border-radius: 10px;
-    font-size: 13.5px;
-    line-height: 1.65;
-    border: 1px solid;
-  }
-
-  .note-warning { background: rgba(224,126,90,0.08); border-color: rgba(224,126,90,0.25); color: #e9a882; }
-  .note-info    { background: rgba(192,200,216,0.07); border-color: rgba(192,200,216,0.2); color: #b0bac8; }
-  .note-success { background: rgba(143,191,138,0.07); border-color: rgba(143,191,138,0.2); color: #9fc89a; }
-
-  @media (max-width: 600px) {
-    .detail-overlay { padding: 12px; align-items: flex-end; }
-    .detail-panel { border-radius: 20px 20px 12px 12px; max-height: 85vh; }
-    .detail-inner { padding: 28px 24px 32px; }
-    .detail-title { font-size: 26px; }
-  }
-
-  .search-clear {
-    position: absolute;
-    right: 14px; top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255,255,255,0.08);
-    border: none;
-    color: var(--text-dim);
-    width: 28px; height: 28px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 13px;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.15s;
-  }
-  .search-clear:hover { background: rgba(255,255,255,0.15); color: var(--text); }
-  .search-input:not(:placeholder-shown) ~ .search-clear { display: flex; }
-  .search-input { padding-right: 50px; }
-
-  /* Search results panel */
-  #searchResults {
-    margin-bottom: 32px;
-  }
-
-  .search-result-header {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.13em;
-    text-transform: uppercase;
-    color: var(--text-dim);
-    margin-bottom: 16px;
-    padding: 0 2px;
-  }
-
-  .search-result-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 10px;
-  }
-
-  .search-result-card {
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 16px 18px;
-    cursor: pointer;
-    transition: background 0.12s, border-color 0.12s, transform 0.1s;
-  }
-  .search-result-card:hover { background: var(--bg3); transform: translateY(-1px); }
-  .search-result-card.tier-1 { border-color: var(--t1-border); }
-  .search-result-card.tier-2 { border-color: var(--t2-border); }
-  .search-result-card.tier-3 { border-color: var(--t3-border); }
-  .search-result-card.tier-4 { border-color: var(--t4-border); }
-  .search-result-card.tier-5 { border-color: var(--t5-border); }
-
-  .search-result-tier {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 6px;
-  }
-
-  .search-result-name {
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--text);
-    line-height: 1.3;
-  }
-
-  .search-result-name mark {
-    background: rgba(212,168,67,0.35);
-    color: #f0cc70;
-    border-radius: 3px;
-    padding: 0 2px;
-  }
-
-  .search-empty {
-    text-align: center;
-    padding: 48px 24px;
-    color: var(--text-dim);
-    font-size: 15px;
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(8px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .search-result-card {
-    animation: fadeIn 0.18s ease both;
-  }
- */
-  .legend {
-    margin-top: 56px;
-    padding: 28px;
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-  }
-
-  .legend-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    margin-bottom: 20px;
-    color: var(--text);
-  }
-
-  .legend-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 16px;
-  }
-
-  .legend-item {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  .legend-tier-name {
-    font-size: 13px;
-    font-weight: 600;
-  }
-
-  .legend-tier-desc {
-    font-size: 12px;
-    color: var(--text-dim);
-    line-height: 1.5;
-  }
-
-  /* ── Footer ── */
-  footer {
-    margin-top: 64px;
-    padding-top: 24px;
-    border-top: 1px solid var(--border);
-    font-size: 12px;
-    color: var(--text-dim);
-    font-family: 'DM Mono', monospace;
-    letter-spacing: 0.05em;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: gap;
-    gap: 8px;
-  }
-
-  /* ── Animations ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(16px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .tier-section {
-    animation: fadeUp 0.4s ease both;
-  }
-
-  .tier-section:nth-child(1) { animation-delay: 0.05s; }
-  .tier-section:nth-child(2) { animation-delay: 0.10s; }
-  .tier-section:nth-child(3) { animation-delay: 0.15s; }
-  .tier-section:nth-child(4) { animation-delay: 0.20s; }
-  .tier-section:nth-child(5) { animation-delay: 0.25s; }
-
-  @media (max-width: 600px) {
-    .brand-grid { grid-template-columns: 1fr 1fr; }
-    header { padding: 40px 0 32px; }
-    .filter-bar { gap: 6px; }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.6;min-height:100vh}
+  body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:0.5}
+
+  /* Lang bar */
+  .lang-bar{position:sticky;top:0;z-index:50;display:flex;justify-content:center;align-items:center;padding:10px 24px;background:rgba(13,15,20,0.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+  .lang-switcher{display:flex;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:4px;gap:4px}
+  .lang-btn{background:transparent;border:1px solid transparent;color:var(--text-dim);padding:7px 22px;border-radius:7px;cursor:pointer;font-family:'DM Mono',monospace;font-size:12px;font-weight:500;letter-spacing:0.1em;transition:all 0.15s;display:flex;align-items:center;gap:8px}
+  .lang-btn:hover{color:var(--text);background:rgba(255,255,255,0.05)}
+  .lang-btn.active{background:rgba(255,255,255,0.1);color:#fff;border-color:rgba(255,255,255,0.15)}
+  .lang-flag{font-size:16px}
+
+  .page-wrap{max-width:1100px;margin:0 auto;padding:0 24px 80px;position:relative;z-index:1}
+
+  /* Header */
+  header{padding:56px 0 44px;border-bottom:1px solid var(--border);margin-bottom:48px}
+  .header-eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dim);margin-bottom:16px}
+  header h1{font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,56px);font-weight:900;line-height:1.1;letter-spacing:-0.02em;margin-bottom:16px;background:linear-gradient(135deg,#e8e6e0 30%,#a09a8a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .header-meta{font-size:14px;color:var(--text-dim);display:flex;gap:24px;flex-wrap:wrap;align-items:center}
+  .header-meta span{display:flex;align-items:center;gap:6px}
+  .dot{width:6px;height:6px;border-radius:50%;background:#3d8f5a;display:inline-block}
+
+  /* Filter */
+  .filter-bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:40px;padding:16px 20px;background:var(--bg2);border:1px solid var(--border);border-radius:12px}
+  .filter-label{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);display:flex;align-items:center;margin-right:8px;white-space:nowrap}
+  .filter-btn{background:transparent;border:1px solid var(--border);color:var(--text-mid);padding:6px 14px;border-radius:6px;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;transition:all 0.15s;white-space:nowrap}
+  .filter-btn:hover{border-color:rgba(255,255,255,0.2);color:var(--text)}
+  .filter-btn.active{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.25);color:#fff}
+  .filter-btn[data-tier="1"].active{background:var(--t1-bg);border-color:var(--t1-border);color:var(--t1-color)}
+  .filter-btn[data-tier="2"].active{background:var(--t2-bg);border-color:var(--t2-border);color:var(--t2-color)}
+  .filter-btn[data-tier="3"].active{background:var(--t3-bg);border-color:var(--t3-border);color:var(--t3-color)}
+  .filter-btn[data-tier="4"].active{background:var(--t4-bg);border-color:var(--t4-border);color:var(--t4-color)}
+  .filter-btn[data-tier="5"].active{background:var(--t5-bg);border-color:var(--t5-border);color:var(--t5-color)}
+
+  /* Search */
+  .search-wrap{position:relative;margin-bottom:40px}
+  .search-input{width:100%;background:var(--bg2);border:1px solid var(--border);color:var(--text);padding:14px 50px 14px 48px;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:15px;outline:none;transition:border-color 0.15s}
+  .search-input:focus{border-color:rgba(255,255,255,0.2)}
+  .search-input::placeholder{color:var(--text-dim)}
+  .search-icon{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--text-dim);pointer-events:none;font-size:18px}
+  .search-clear{position:absolute;right:14px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.08);border:none;color:var(--text-dim);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:13px;display:none;align-items:center;justify-content:center;transition:background 0.15s}
+  .search-clear:hover{background:rgba(255,255,255,0.15);color:var(--text)}
+  .search-input:not(:placeholder-shown)~.search-clear{display:flex}
+
+  /* Search results */
+  #searchResults{margin-bottom:32px}
+  .search-result-header{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.13em;text-transform:uppercase;color:var(--text-dim);margin-bottom:16px;padding:0 2px}
+  .search-result-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+  .search-result-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:16px 18px;cursor:pointer;transition:background 0.12s,transform 0.1s;animation:fadeIn 0.18s ease both}
+  .search-result-card:hover{background:var(--bg3);transform:translateY(-1px)}
+  .search-result-card.tier-1{border-color:var(--t1-border)}.search-result-card.tier-2{border-color:var(--t2-border)}.search-result-card.tier-3{border-color:var(--t3-border)}.search-result-card.tier-4{border-color:var(--t4-border)}.search-result-card.tier-5{border-color:var(--t5-border)}
+  .search-result-tier{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:6px}
+  .search-result-name{font-size:16px;font-weight:600;color:var(--text);line-height:1.3}
+  .search-result-name mark{background:rgba(212,168,67,0.35);color:#f0cc70;border-radius:3px;padding:0 2px}
+  .search-empty{text-align:center;padding:48px 24px;color:var(--text-dim);font-size:15px;background:var(--bg2);border:1px solid var(--border);border-radius:12px}
+
+  /* Tier sections */
+  .tier-section{margin-bottom:32px;border-radius:14px;overflow:hidden;border:1px solid var(--border);transition:opacity 0.2s}
+  .tier-section.hidden{display:none}
+  .tier-header{padding:20px 24px;display:flex;align-items:center;gap:16px;cursor:pointer;user-select:none;transition:background 0.15s}
+  .tier-header:hover{filter:brightness(1.05)}
+  .tier-1 .tier-header{background:linear-gradient(135deg,rgba(212,168,67,0.15),rgba(212,168,67,0.05));border-bottom:1px solid var(--t1-border)}
+  .tier-2 .tier-header{background:linear-gradient(135deg,rgba(192,200,216,0.1),rgba(192,200,216,0.03));border-bottom:1px solid var(--t2-border)}
+  .tier-3 .tier-header{background:linear-gradient(135deg,rgba(143,191,138,0.1),rgba(143,191,138,0.03));border-bottom:1px solid var(--t3-border)}
+  .tier-4 .tier-header{background:linear-gradient(135deg,rgba(224,126,90,0.1),rgba(224,126,90,0.03));border-bottom:1px solid var(--t4-border)}
+  .tier-5 .tier-header{background:linear-gradient(135deg,rgba(196,92,92,0.1),rgba(196,92,92,0.03));border-bottom:1px solid var(--t5-border)}
+  .tier-badge{display:flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:10px;font-size:22px;flex-shrink:0}
+  .tier-1 .tier-badge{background:rgba(212,168,67,0.15)}.tier-2 .tier-badge{background:rgba(192,200,216,0.1)}.tier-3 .tier-badge{background:rgba(143,191,138,0.1)}.tier-4 .tier-badge{background:rgba(224,126,90,0.1)}.tier-5 .tier-badge{background:rgba(196,92,92,0.1)}
+  .tier-title-group{flex:1}
+  .tier-number{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:2px}
+  .tier-1 .tier-number{color:var(--t1-color)}.tier-2 .tier-number{color:var(--t2-color)}.tier-3 .tier-number{color:var(--t3-color)}.tier-4 .tier-number{color:var(--t4-color)}.tier-5 .tier-number{color:var(--t5-color)}
+  .tier-name{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--text)}
+  .tier-desc{font-size:13px;color:var(--text-dim);margin-top:2px}
+  .tier-count{font-family:'DM Mono',monospace;font-size:13px;color:var(--text-dim);background:rgba(255,255,255,0.05);padding:4px 10px;border-radius:20px;white-space:nowrap}
+  .tier-chevron{color:var(--text-dim);font-size:18px;transition:transform 0.2s;flex-shrink:0}
+  .tier-section.collapsed .tier-chevron{transform:rotate(-90deg)}
+
+  /* Brand grid */
+  .brand-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1px;background:var(--border);overflow:hidden}
+  .tier-section.collapsed .brand-grid{display:none}
+  .brand-card{background:var(--bg);padding:14px 18px;cursor:pointer;transition:background 0.12s;display:flex;align-items:flex-start;gap:10px}
+  .brand-card:hover{background:var(--bg3)}
+  .brand-dot{width:7px;height:7px;border-radius:50%;margin-top:6px;flex-shrink:0}
+  .tier-1 .brand-dot{background:var(--t1-color)}.tier-2 .brand-dot{background:var(--t2-color)}.tier-3 .brand-dot{background:var(--t3-color)}.tier-4 .brand-dot{background:var(--t4-color)}.tier-5 .brand-dot{background:var(--t5-color)}
+  .brand-name{font-size:14px;font-weight:500;color:var(--text);line-height:1.4}
+  .brand-warning{font-size:11px;color:var(--t4-color);margin-top:2px}
+
+  /* Modal */
+  .detail-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.65);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);z-index:99;opacity:0;pointer-events:none;transition:opacity 0.2s;display:flex;align-items:center;justify-content:center;padding:24px}
+  .detail-overlay.open{opacity:1;pointer-events:all}
+  .detail-panel{position:relative;width:100%;max-width:600px;max-height:90vh;background:var(--bg2);border:1px solid var(--border);border-radius:20px;z-index:100;overflow-y:auto;overscroll-behavior:contain;transform:scale(0.95) translateY(12px);opacity:0;transition:transform 0.22s cubic-bezier(0.34,1.56,0.64,1),opacity 0.18s ease;box-shadow:0 32px 80px rgba(0,0,0,0.6),0 0 0 1px rgba(255,255,255,0.05)}
+  .detail-overlay.open .detail-panel{transform:scale(1) translateY(0);opacity:1}
+  .detail-inner{padding:36px 36px 40px}
+  .detail-close{position:absolute;top:16px;right:16px;background:rgba(255,255,255,0.07);border:none;color:var(--text-mid);width:36px;height:36px;border-radius:8px;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:background 0.15s,color 0.15s}
+  .detail-close:hover{background:rgba(255,255,255,0.14);color:var(--text)}
+  .detail-tier-tag{display:inline-flex;align-items:center;gap:6px;padding:5px 14px;border-radius:20px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:14px}
+  .detail-title{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;margin-bottom:4px;line-height:1.15;padding-right:40px}
+  .detail-divider{height:1px;background:var(--border);margin:20px 0}
+  .detail-body{font-size:15px;color:var(--text-mid);line-height:1.8}
+  .detail-body strong{color:var(--text);font-weight:600}
+  .detail-note{margin-top:16px;padding:14px 18px;border-radius:10px;font-size:13.5px;line-height:1.65;border:1px solid}
+  .note-warning{background:rgba(224,126,90,0.08);border-color:rgba(224,126,90,0.25);color:#e9a882}
+  .note-info{background:rgba(192,200,216,0.07);border-color:rgba(192,200,216,0.2);color:#b0bac8}
+  .note-success{background:rgba(143,191,138,0.07);border-color:rgba(143,191,138,0.2);color:#9fc89a}
+
+  /* Legend */
+  .legend{margin-top:56px;padding:28px;background:var(--bg2);border:1px solid var(--border);border-radius:14px}
+  .legend-title{font-family:'Playfair Display',serif;font-size:18px;margin-bottom:20px;color:var(--text)}
+  .legend-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px}
+  .legend-item{display:flex;flex-direction:column;gap:4px}
+  .legend-tier-name{font-size:13px;font-weight:600}
+  .legend-tier-desc{font-size:12px;color:var(--text-dim);line-height:1.5}
+
+  /* Footer */
+  footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--border);font-size:12px;color:var(--text-dim);font-family:'DM Mono',monospace;letter-spacing:0.05em;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+  /* Animations */
+  @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+  .tier-section{animation:fadeUp 0.4s ease both}
+  .tier-section:nth-child(1){animation-delay:0.05s}.tier-section:nth-child(2){animation-delay:0.10s}.tier-section:nth-child(3){animation-delay:0.15s}.tier-section:nth-child(4){animation-delay:0.20s}.tier-section:nth-child(5){animation-delay:0.25s}
+
+  @media(max-width:600px){
+    .brand-grid{grid-template-columns:1fr 1fr}
+    header{padding:40px 0 32px}
+    .filter-bar{gap:6px}
+    .detail-overlay{padding:12px;align-items:flex-end}
+    .detail-panel{border-radius:20px 20px 12px 12px;max-height:85vh}
+    .detail-inner{padding:28px 24px 32px}
+    .detail-title{font-size:26px}
   }
 </style>
 </head>
 <body>
 
+<div class="lang-bar">
+  <div class="lang-switcher">
+    <button class="lang-btn active" id="btn-de" onclick="setLang('de')"><span class="lang-flag">🇩🇪</span> Deutsch</button>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')"><span class="lang-flag">🇬🇧</span> English</button>
+  </div>
+</div>
+
 <div class="detail-overlay" id="overlay">
   <div class="detail-panel" id="detailPanel">
-    <div class="detail-inner" id="detailInner">
-      <button class="detail-close" id="detailClose">✕</button>
-    </div>
+    <div class="detail-inner" id="detailInner"></div>
   </div>
 </div>
 
 <div class="page-wrap">
-
   <header>
-    <div class="header-eyebrow">Stand März 2026 · Laufend aktualisiert</div>
-    <h1>Supplement-Marken<br>Tier-List</h1>
+    <div class="header-eyebrow" data-i18n="eyebrow"></div>
+    <h1 data-i18n-html="title"></h1>
     <div class="header-meta">
-      <span><span class="dot"></span>&nbsp;80+ Marken bewertet</span>
-      <span>5 Qualitätsstufen</span>
-      <span>Letzte Prüfung: März 2026</span>
+      <span><span class="dot"></span>&nbsp;<span data-i18n="meta1"></span></span>
+      <span data-i18n="meta2"></span>
+      <span data-i18n="meta3"></span>
     </div>
   </header>
 
   <div class="filter-bar">
-    <span class="filter-label">Filter:</span>
-    <button class="filter-btn active" data-tier="all">Alle anzeigen</button>
+    <span class="filter-label" data-i18n="filterLabel"></span>
+    <button class="filter-btn active" data-tier="all" data-i18n="filterAll"></button>
     <button class="filter-btn" data-tier="1">🥇 Tier 1 – Elite</button>
     <button class="filter-btn" data-tier="2">🥈 Tier 2 – High Reliability</button>
     <button class="filter-btn" data-tier="3">🥉 Tier 3 – Solid Standard</button>
@@ -656,511 +187,536 @@
 
   <div class="search-wrap">
     <span class="search-icon">🔍</span>
-    <input type="text" class="search-input" id="searchInput" placeholder="Marke suchen …">
-    <button class="search-clear" id="searchClear" onclick="clearSearch()">✕</button>
+    <input type="text" class="search-input" id="searchInput" data-i18n-placeholder="searchPlaceholder">
+    <button class="search-clear" onclick="clearSearch()">✕</button>
   </div>
 
   <div id="searchResults" style="display:none"></div>
   <div id="tierContainer">
-  <!-- TIER 1 -->
+
   <div class="tier-section tier-1" data-tier="1">
     <div class="tier-header" onclick="toggleTier(this)">
       <div class="tier-badge">🥇</div>
       <div class="tier-title-group">
         <div class="tier-number">Tier 1</div>
         <div class="tier-name">Elite</div>
-        <div class="tier-desc">Chargen-Analysen öffentlich, Patente, Glas</div>
+        <div class="tier-desc" data-i18n="t1desc"></div>
       </div>
-      <div class="tier-count" id="count-1">8 Marken</div>
+      <div class="tier-count">8 <span data-i18n="brandsWord"></span></div>
       <div class="tier-chevron">›</div>
     </div>
     <div class="brand-grid">
-      <div class="brand-card" onclick="showDetail('Age-Science','1')"><div class="brand-dot"></div><div><div class="brand-name">Age-Science</div></div></div>
-      <div class="brand-card" onclick="showDetail('Feel Natural','1')"><div class="brand-dot"></div><div><div class="brand-name">Feel Natural</div></div></div>
-      <div class="brand-card" onclick="showDetail('for you eHealth','1')"><div class="brand-dot"></div><div><div class="brand-name">for you eHealth</div></div></div>
-      <div class="brand-card" onclick="showDetail('Longevity Box','1')"><div class="brand-dot"></div><div><div class="brand-name">Longevity Box</div></div></div>
-      <div class="brand-card" onclick="showDetail('MoleQlar','1')"><div class="brand-dot"></div><div><div class="brand-name">MoleQlar</div></div></div>
-      <div class="brand-card" onclick="showDetail('Nature Love / Natural Elements','1')"><div class="brand-dot"></div><div><div class="brand-name">Nature Love / Natural Elements</div></div></div>
-      <div class="brand-card" onclick="showDetail('NOVOS Labs','1')"><div class="brand-dot"></div><div><div class="brand-name">NOVOS Labs</div></div></div>
-      <div class="brand-card" onclick="showDetail('Qidosha','1')"><div class="brand-dot"></div><div><div class="brand-name">Qidosha</div></div></div>
+      <div class="brand-card" onclick="showDetail('Age-Science')"><div class="brand-dot"></div><div><div class="brand-name">Age-Science</div></div></div>
+      <div class="brand-card" onclick="showDetail('Feel Natural')"><div class="brand-dot"></div><div><div class="brand-name">Feel Natural</div></div></div>
+      <div class="brand-card" onclick="showDetail('for you eHealth')"><div class="brand-dot"></div><div><div class="brand-name">for you eHealth</div></div></div>
+      <div class="brand-card" onclick="showDetail('Longevity Box')"><div class="brand-dot"></div><div><div class="brand-name">Longevity Box</div></div></div>
+      <div class="brand-card" onclick="showDetail('MoleQlar')"><div class="brand-dot"></div><div><div class="brand-name">MoleQlar</div></div></div>
+      <div class="brand-card" onclick="showDetail('Nature Love / Natural Elements')"><div class="brand-dot"></div><div><div class="brand-name">Nature Love / Natural Elements</div></div></div>
+      <div class="brand-card" onclick="showDetail('NOVOS Labs')"><div class="brand-dot"></div><div><div class="brand-name">NOVOS Labs</div></div></div>
+      <div class="brand-card" onclick="showDetail('Qidosha')"><div class="brand-dot"></div><div><div class="brand-name">Qidosha</div></div></div>
     </div>
   </div>
 
-  <!-- TIER 2 -->
   <div class="tier-section tier-2" data-tier="2">
     <div class="tier-header" onclick="toggleTier(this)">
       <div class="tier-badge">🥈</div>
       <div class="tier-title-group">
         <div class="tier-number">Tier 2</div>
         <div class="tier-name">High Reliability</div>
-        <div class="tier-desc">Sport/Medizin-Fokus, Manufakturen, hohe Standards</div>
+        <div class="tier-desc" data-i18n="t2desc"></div>
       </div>
-      <div class="tier-count" id="count-2">31 Marken</div>
+      <div class="tier-count">31 <span data-i18n="brandsWord"></span></div>
       <div class="tier-chevron">›</div>
     </div>
     <div class="brand-grid">
-      <div class="brand-card" onclick="showDetail('Best Body Nutrition','2')"><div class="brand-dot"></div><div><div class="brand-name">Best Body Nutrition</div></div></div>
-      <div class="brand-card" onclick="showDetail('Big Zone','2')"><div class="brand-dot"></div><div><div class="brand-name">Big Zone</div></div></div>
-      <div class="brand-card" onclick="showDetail('ESN','2')"><div class="brand-dot"></div><div><div class="brand-name">ESN</div><div class="brand-warning">⚠️ More Nutrition problematisch</div></div></div>
-      <div class="brand-card" onclick="showDetail('Igennus','2')"><div class="brand-dot"></div><div><div class="brand-name">Igennus</div></div></div>
-      <div class="brand-card" onclick="showDetail('Kinetica','2')"><div class="brand-dot"></div><div><div class="brand-name">Kinetica</div></div></div>
-      <div class="brand-card" onclick="showDetail('Life Extension','2')"><div class="brand-dot"></div><div><div class="brand-name">Life Extension</div></div></div>
-      <div class="brand-card" onclick="showDetail('MST Nutrition','2')"><div class="brand-dot"></div><div><div class="brand-name">MST Nutrition</div></div></div>
-      <div class="brand-card" onclick="showDetail('Natures Plus','2')"><div class="brand-dot"></div><div><div class="brand-name">Natures Plus</div></div></div>
-      <div class="brand-card" onclick="showDetail('NatuGena','2')"><div class="brand-dot"></div><div><div class="brand-name">NatuGena</div></div></div>
-      <div class="brand-card" onclick="showDetail('Naturtreu','2')"><div class="brand-dot"></div><div><div class="brand-name">Naturtreu</div></div></div>
-      <div class="brand-card" onclick="showDetail('Neotes','2')"><div class="brand-dot"></div><div><div class="brand-name">Neotes</div></div></div>
-      <div class="brand-card" onclick="showDetail('NOW Foods','2')"><div class="brand-dot"></div><div><div class="brand-name">NOW Foods</div></div></div>
-      <div class="brand-card" onclick="showDetail('Nutri+','2')"><div class="brand-dot"></div><div><div class="brand-name">Nutri+</div></div></div>
-      <div class="brand-card" onclick="showDetail('Olimp','2')"><div class="brand-dot"></div><div><div class="brand-name">Olimp</div></div></div>
-      <div class="brand-card" onclick="showDetail('Optimum Nutrition','2')"><div class="brand-dot"></div><div><div class="brand-name">Optimum Nutrition (ON)</div></div></div>
-      <div class="brand-card" onclick="showDetail('Primal State','2')"><div class="brand-dot"></div><div><div class="brand-name">Primal State</div></div></div>
-      <div class="brand-card" onclick="showDetail('ProFuel','2')"><div class="brand-dot"></div><div><div class="brand-name">ProFuel</div></div></div>
-      <div class="brand-card" onclick="showDetail('Raab Vitalfood','2')"><div class="brand-dot"></div><div><div class="brand-name">Raab Vitalfood</div></div></div>
-      <div class="brand-card" onclick="showDetail('Redfood Nature','2')"><div class="brand-dot"></div><div><div class="brand-name">Redfood Nature</div></div></div>
-      <div class="brand-card" onclick="showDetail('Ruehl24','2')"><div class="brand-dot"></div><div><div class="brand-name">Ruehl24</div></div></div>
-      <div class="brand-card" onclick="showDetail('Sanuvit','2')"><div class="brand-dot"></div><div><div class="brand-name">Sanuvit</div></div></div>
-      <div class="brand-card" onclick="showDetail('Science in Sport','2')"><div class="brand-dot"></div><div><div class="brand-name">Science in Sport (SiS)</div></div></div>
-      <div class="brand-card" onclick="showDetail('Solvisan','2')"><div class="brand-dot"></div><div><div class="brand-name">Solvisan</div></div></div>
-      <div class="brand-card" onclick="showDetail('Source of Nature','2')"><div class="brand-dot"></div><div><div class="brand-name">Source of Nature</div></div></div>
-      <div class="brand-card" onclick="showDetail('Sunday Natural','2')"><div class="brand-dot"></div><div><div class="brand-name">Sunday Natural</div></div></div>
-      <div class="brand-card" onclick="showDetail('Swanson','2')"><div class="brand-dot"></div><div><div class="brand-name">Swanson</div></div></div>
-      <div class="brand-card" onclick="showDetail('TNT','2')"><div class="brand-dot"></div><div><div class="brand-name">TNT</div></div></div>
-      <div class="brand-card" onclick="showDetail('Vetain','2')"><div class="brand-dot"></div><div><div class="brand-name">Vetain</div></div></div>
-      <div class="brand-card" onclick="showDetail('Vitaworld','2')"><div class="brand-dot"></div><div><div class="brand-name">Vitaworld</div></div></div>
-      <div class="brand-card" onclick="showDetail('Wehle Sports','2')"><div class="brand-dot"></div><div><div class="brand-name">Wehle Sports</div></div></div>
-      <div class="brand-card" onclick="showDetail('WFN','2')"><div class="brand-dot"></div><div><div class="brand-name">WFN</div></div></div>
+      <div class="brand-card" onclick="showDetail('Best Body Nutrition')"><div class="brand-dot"></div><div><div class="brand-name">Best Body Nutrition</div></div></div>
+      <div class="brand-card" onclick="showDetail('Big Zone')"><div class="brand-dot"></div><div><div class="brand-name">Big Zone</div></div></div>
+      <div class="brand-card" onclick="showDetail('ESN')"><div class="brand-dot"></div><div><div class="brand-name">ESN</div><div class="brand-warning">⚠️ More Nutrition</div></div></div>
+      <div class="brand-card" onclick="showDetail('Igennus')"><div class="brand-dot"></div><div><div class="brand-name">Igennus</div></div></div>
+      <div class="brand-card" onclick="showDetail('Kinetica')"><div class="brand-dot"></div><div><div class="brand-name">Kinetica</div></div></div>
+      <div class="brand-card" onclick="showDetail('Life Extension')"><div class="brand-dot"></div><div><div class="brand-name">Life Extension</div></div></div>
+      <div class="brand-card" onclick="showDetail('MST Nutrition')"><div class="brand-dot"></div><div><div class="brand-name">MST Nutrition</div></div></div>
+      <div class="brand-card" onclick="showDetail('Natures Plus')"><div class="brand-dot"></div><div><div class="brand-name">Natures Plus</div></div></div>
+      <div class="brand-card" onclick="showDetail('NatuGena')"><div class="brand-dot"></div><div><div class="brand-name">NatuGena</div></div></div>
+      <div class="brand-card" onclick="showDetail('Naturtreu')"><div class="brand-dot"></div><div><div class="brand-name">Naturtreu</div></div></div>
+      <div class="brand-card" onclick="showDetail('Neotes')"><div class="brand-dot"></div><div><div class="brand-name">Neotes</div></div></div>
+      <div class="brand-card" onclick="showDetail('NOW Foods')"><div class="brand-dot"></div><div><div class="brand-name">NOW Foods</div></div></div>
+      <div class="brand-card" onclick="showDetail('Nutri+')"><div class="brand-dot"></div><div><div class="brand-name">Nutri+</div></div></div>
+      <div class="brand-card" onclick="showDetail('Olimp')"><div class="brand-dot"></div><div><div class="brand-name">Olimp</div></div></div>
+      <div class="brand-card" onclick="showDetail('Optimum Nutrition')"><div class="brand-dot"></div><div><div class="brand-name">Optimum Nutrition (ON)</div></div></div>
+      <div class="brand-card" onclick="showDetail('Primal State')"><div class="brand-dot"></div><div><div class="brand-name">Primal State</div></div></div>
+      <div class="brand-card" onclick="showDetail('ProFuel')"><div class="brand-dot"></div><div><div class="brand-name">ProFuel</div></div></div>
+      <div class="brand-card" onclick="showDetail('Raab Vitalfood')"><div class="brand-dot"></div><div><div class="brand-name">Raab Vitalfood</div></div></div>
+      <div class="brand-card" onclick="showDetail('Redfood Nature')"><div class="brand-dot"></div><div><div class="brand-name">Redfood Nature</div></div></div>
+      <div class="brand-card" onclick="showDetail('Ruehl24')"><div class="brand-dot"></div><div><div class="brand-name">Ruehl24</div></div></div>
+      <div class="brand-card" onclick="showDetail('Sanuvit')"><div class="brand-dot"></div><div><div class="brand-name">Sanuvit</div></div></div>
+      <div class="brand-card" onclick="showDetail('Science in Sport')"><div class="brand-dot"></div><div><div class="brand-name">Science in Sport (SiS)</div></div></div>
+      <div class="brand-card" onclick="showDetail('Solvisan')"><div class="brand-dot"></div><div><div class="brand-name">Solvisan</div></div></div>
+      <div class="brand-card" onclick="showDetail('Source of Nature')"><div class="brand-dot"></div><div><div class="brand-name">Source of Nature</div></div></div>
+      <div class="brand-card" onclick="showDetail('Sunday Natural')"><div class="brand-dot"></div><div><div class="brand-name">Sunday Natural</div></div></div>
+      <div class="brand-card" onclick="showDetail('Swanson')"><div class="brand-dot"></div><div><div class="brand-name">Swanson</div></div></div>
+      <div class="brand-card" onclick="showDetail('TNT')"><div class="brand-dot"></div><div><div class="brand-name">TNT</div></div></div>
+      <div class="brand-card" onclick="showDetail('Vetain')"><div class="brand-dot"></div><div><div class="brand-name">Vetain</div></div></div>
+      <div class="brand-card" onclick="showDetail('Vitaworld')"><div class="brand-dot"></div><div><div class="brand-name">Vitaworld</div></div></div>
+      <div class="brand-card" onclick="showDetail('Wehle Sports')"><div class="brand-dot"></div><div><div class="brand-name">Wehle Sports</div></div></div>
+      <div class="brand-card" onclick="showDetail('WFN')"><div class="brand-dot"></div><div><div class="brand-name">WFN</div></div></div>
     </div>
   </div>
 
-  <!-- TIER 3 -->
   <div class="tier-section tier-3" data-tier="3">
     <div class="tier-header" onclick="toggleTier(this)">
       <div class="tier-badge">🥉</div>
       <div class="tier-title-group">
         <div class="tier-number">Tier 3</div>
         <div class="tier-name">Solid Standard</div>
-        <div class="tier-desc">Gute PL-Sieger, Konzern-Marken, solider Durchschnitt</div>
+        <div class="tier-desc" data-i18n="t3desc"></div>
       </div>
-      <div class="tier-count" id="count-3">44 Marken</div>
+      <div class="tier-count">44 <span data-i18n="brandsWord"></span></div>
       <div class="tier-chevron">›</div>
     </div>
     <div class="brand-grid">
-      <div class="brand-card" onclick="showDetail('AAVALABS','3')"><div class="brand-dot"></div><div><div class="brand-name">AAVALABS</div></div></div>
-      <div class="brand-card" onclick="showDetail('Aldous Bio','3')"><div class="brand-dot"></div><div><div class="brand-name">Aldous Bio</div></div></div>
-      <div class="brand-card" onclick="showDetail('AlphaVitalis','3')"><div class="brand-dot"></div><div><div class="brand-name">AlphaVitalis</div></div></div>
-      <div class="brand-card" onclick="showDetail('Alps Nature','3')"><div class="brand-dot"></div><div><div class="brand-name">Alps Nature</div></div></div>
-      <div class="brand-card" onclick="showDetail('Amazing Nature','3')"><div class="brand-dot"></div><div><div class="brand-name">Amazing Nature</div></div></div>
-      <div class="brand-card" onclick="showDetail('APOrtha','3')"><div class="brand-dot"></div><div><div class="brand-name">APOrtha</div></div></div>
-      <div class="brand-card" onclick="showDetail('Bio Medical Pharma','3')"><div class="brand-dot"></div><div><div class="brand-name">Bio Medical Pharma</div></div></div>
-      <div class="brand-card" onclick="showDetail('BIO Protect B.V.','3')"><div class="brand-dot"></div><div><div class="brand-name">BIO Protect B.V.</div></div></div>
-      <div class="brand-card" onclick="showDetail('Biotary','3')"><div class="brand-dot"></div><div><div class="brand-name">Biotary</div></div></div>
-      <div class="brand-card" onclick="showDetail('Blattwerk','3')"><div class="brand-dot"></div><div><div class="brand-name">Blattwerk (360)</div></div></div>
-      <div class="brand-card" onclick="showDetail('Boderra','3')"><div class="brand-dot"></div><div><div class="brand-name">Boderra</div></div></div>
-      <div class="brand-card" onclick="showDetail('Bulk','3')"><div class="brand-dot"></div><div><div class="brand-name">Bulk</div></div></div>
-      <div class="brand-card" onclick="showDetail('CDF Sports & Health','3')"><div class="brand-dot"></div><div><div class="brand-name">CDF Sports & Health</div></div></div>
-      <div class="brand-card" onclick="showDetail('Cosphera','3')"><div class="brand-dot"></div><div><div class="brand-name">Cosphera</div></div></div>
-      <div class="brand-card" onclick="showDetail('Double Wood','3')"><div class="brand-dot"></div><div><div class="brand-name">Double Wood</div></div></div>
-      <div class="brand-card" onclick="showDetail('DPG Delnava Pharma','3')"><div class="brand-dot"></div><div><div class="brand-name">DPG Delnava Pharma</div></div></div>
-      <div class="brand-card" onclick="showDetail('Effective Nature','3')"><div class="brand-dot"></div><div><div class="brand-name">Effective Nature</div></div></div>
-      <div class="brand-card" onclick="showDetail('Elixirvit','3')"><div class="brand-dot"></div><div><div class="brand-name">Elixirvit</div></div></div>
-      <div class="brand-card" onclick="showDetail('EWL Naturprodukte','3')"><div class="brand-dot"></div><div><div class="brand-name">EWL Naturprodukte</div></div></div>
-      <div class="brand-card" onclick="showDetail('Ezyleaf','3')"><div class="brand-dot"></div><div><div class="brand-name">Ezyleaf</div></div></div>
-      <div class="brand-card" onclick="showDetail('German Elite Nutrition','3')"><div class="brand-dot"></div><div><div class="brand-name">German Elite Nutrition (GEN)</div></div></div>
-      <div class="brand-card" onclick="showDetail('Gloryfeel','3')"><div class="brand-dot"></div><div><div class="brand-name">Gloryfeel</div></div></div>
-      <div class="brand-card" onclick="showDetail('Green Naturals','3')"><div class="brand-dot"></div><div><div class="brand-name">Green Naturals</div></div></div>
-      <div class="brand-card" onclick="showDetail('Gym-Nutrition','3')"><div class="brand-dot"></div><div><div class="brand-name">Gym-Nutrition</div></div></div>
-      <div class="brand-card" onclick="showDetail('Hepatica','3')"><div class="brand-dot"></div><div><div class="brand-name">Hepatica</div></div></div>
-      <div class="brand-card" onclick="showDetail('Her One','3')"><div class="brand-dot"></div><div><div class="brand-name">Her One</div></div></div>
-      <div class="brand-card" onclick="showDetail('Hivital','3')"><div class="brand-dot"></div><div><div class="brand-name">Hivital</div></div></div>
-      <div class="brand-card" onclick="showDetail('MGX','3')"><div class="brand-dot"></div><div><div class="brand-name">MGX</div></div></div>
-      <div class="brand-card" onclick="showDetail('Naturecan','3')"><div class="brand-dot"></div><div><div class="brand-name">Naturecan</div></div></div>
-      <div class="brand-card" onclick="showDetail('Nutravita','3')"><div class="brand-dot"></div><div><div class="brand-name">Nutravita</div></div></div>
-      <div class="brand-card" onclick="showDetail('PharmaVital','3')"><div class="brand-dot"></div><div><div class="brand-name">PharmaVital</div></div></div>
-      <div class="brand-card" onclick="showDetail('PH PROWISE Healthcare','3')"><div class="brand-dot"></div><div><div class="brand-name">PH PROWISE Healthcare</div></div></div>
-      <div class="brand-card" onclick="showDetail('Plantomol','3')"><div class="brand-dot"></div><div><div class="brand-name">Plantomol</div></div></div>
-      <div class="brand-card" onclick="showDetail('Purefitness','3')"><div class="brand-dot"></div><div><div class="brand-name">Purefitness</div></div></div>
-      <div class="brand-card" onclick="showDetail('Sanotact','3')"><div class="brand-dot"></div><div><div class="brand-name">Sanotact</div></div></div>
-      <div class="brand-card" onclick="showDetail('Scheunengut','3')"><div class="brand-dot"></div><div><div class="brand-name">Scheunengut</div></div></div>
-      <div class="brand-card" onclick="showDetail('Syglabs','3')"><div class="brand-dot"></div><div><div class="brand-name">Syglabs</div></div></div>
-      <div class="brand-card" onclick="showDetail('Vihado','3')"><div class="brand-dot"></div><div><div class="brand-name">Vihado</div></div></div>
-      <div class="brand-card" onclick="showDetail('Vit4ever','3')"><div class="brand-dot"></div><div><div class="brand-name">Vit4ever</div></div></div>
-      <div class="brand-card" onclick="showDetail('Vita2You','3')"><div class="brand-dot"></div><div><div class="brand-name">Vita2You</div></div></div>
-      <div class="brand-card" onclick="showDetail('Vitality Nutritionals','3')"><div class="brand-dot"></div><div><div class="brand-name">Vitality Nutritionals</div></div></div>
-      <div class="brand-card" onclick="showDetail('Vitamaze','3')"><div class="brand-dot"></div><div><div class="brand-name">Vitamaze</div></div></div>
-      <div class="brand-card" onclick="showDetail('Vitavea','3')"><div class="brand-dot"></div><div><div class="brand-name">Vitavea</div></div></div>
+      <div class="brand-card" onclick="showDetail('AAVALABS')"><div class="brand-dot"></div><div><div class="brand-name">AAVALABS</div></div></div>
+      <div class="brand-card" onclick="showDetail('Aldous Bio')"><div class="brand-dot"></div><div><div class="brand-name">Aldous Bio</div></div></div>
+      <div class="brand-card" onclick="showDetail('AlphaVitalis')"><div class="brand-dot"></div><div><div class="brand-name">AlphaVitalis</div></div></div>
+      <div class="brand-card" onclick="showDetail('Alps Nature')"><div class="brand-dot"></div><div><div class="brand-name">Alps Nature</div></div></div>
+      <div class="brand-card" onclick="showDetail('Amazing Nature')"><div class="brand-dot"></div><div><div class="brand-name">Amazing Nature</div></div></div>
+      <div class="brand-card" onclick="showDetail('APOrtha')"><div class="brand-dot"></div><div><div class="brand-name">APOrtha</div></div></div>
+      <div class="brand-card" onclick="showDetail('Bio Medical Pharma')"><div class="brand-dot"></div><div><div class="brand-name">Bio Medical Pharma</div></div></div>
+      <div class="brand-card" onclick="showDetail('BIO Protect B.V.')"><div class="brand-dot"></div><div><div class="brand-name">BIO Protect B.V.</div></div></div>
+      <div class="brand-card" onclick="showDetail('Biotary')"><div class="brand-dot"></div><div><div class="brand-name">Biotary</div></div></div>
+      <div class="brand-card" onclick="showDetail('Blattwerk')"><div class="brand-dot"></div><div><div class="brand-name">Blattwerk (360)</div></div></div>
+      <div class="brand-card" onclick="showDetail('Boderra')"><div class="brand-dot"></div><div><div class="brand-name">Boderra</div></div></div>
+      <div class="brand-card" onclick="showDetail('Bulk')"><div class="brand-dot"></div><div><div class="brand-name">Bulk</div></div></div>
+      <div class="brand-card" onclick="showDetail('CDF Sports & Health')"><div class="brand-dot"></div><div><div class="brand-name">CDF Sports &amp; Health</div></div></div>
+      <div class="brand-card" onclick="showDetail('Cosphera')"><div class="brand-dot"></div><div><div class="brand-name">Cosphera</div></div></div>
+      <div class="brand-card" onclick="showDetail('Double Wood')"><div class="brand-dot"></div><div><div class="brand-name">Double Wood</div></div></div>
+      <div class="brand-card" onclick="showDetail('DPG Delnava Pharma')"><div class="brand-dot"></div><div><div class="brand-name">DPG Delnava Pharma</div></div></div>
+      <div class="brand-card" onclick="showDetail('Effective Nature')"><div class="brand-dot"></div><div><div class="brand-name">Effective Nature</div></div></div>
+      <div class="brand-card" onclick="showDetail('Elixirvit')"><div class="brand-dot"></div><div><div class="brand-name">Elixirvit</div></div></div>
+      <div class="brand-card" onclick="showDetail('EWL Naturprodukte')"><div class="brand-dot"></div><div><div class="brand-name">EWL Naturprodukte</div></div></div>
+      <div class="brand-card" onclick="showDetail('Ezyleaf')"><div class="brand-dot"></div><div><div class="brand-name">Ezyleaf</div></div></div>
+      <div class="brand-card" onclick="showDetail('German Elite Nutrition')"><div class="brand-dot"></div><div><div class="brand-name">German Elite Nutrition (GEN)</div></div></div>
+      <div class="brand-card" onclick="showDetail('Gloryfeel')"><div class="brand-dot"></div><div><div class="brand-name">Gloryfeel</div></div></div>
+      <div class="brand-card" onclick="showDetail('Green Naturals')"><div class="brand-dot"></div><div><div class="brand-name">Green Naturals</div></div></div>
+      <div class="brand-card" onclick="showDetail('Gym-Nutrition')"><div class="brand-dot"></div><div><div class="brand-name">Gym-Nutrition</div></div></div>
+      <div class="brand-card" onclick="showDetail('Hepatica')"><div class="brand-dot"></div><div><div class="brand-name">Hepatica</div></div></div>
+      <div class="brand-card" onclick="showDetail('Her One')"><div class="brand-dot"></div><div><div class="brand-name">Her One</div></div></div>
+      <div class="brand-card" onclick="showDetail('Hivital')"><div class="brand-dot"></div><div><div class="brand-name">Hivital</div></div></div>
+      <div class="brand-card" onclick="showDetail('MGX')"><div class="brand-dot"></div><div><div class="brand-name">MGX</div></div></div>
+      <div class="brand-card" onclick="showDetail('Naturecan')"><div class="brand-dot"></div><div><div class="brand-name">Naturecan</div></div></div>
+      <div class="brand-card" onclick="showDetail('Nutravita')"><div class="brand-dot"></div><div><div class="brand-name">Nutravita</div></div></div>
+      <div class="brand-card" onclick="showDetail('PharmaVital')"><div class="brand-dot"></div><div><div class="brand-name">PharmaVital</div></div></div>
+      <div class="brand-card" onclick="showDetail('PH PROWISE Healthcare')"><div class="brand-dot"></div><div><div class="brand-name">PH PROWISE Healthcare</div></div></div>
+      <div class="brand-card" onclick="showDetail('Plantomol')"><div class="brand-dot"></div><div><div class="brand-name">Plantomol</div></div></div>
+      <div class="brand-card" onclick="showDetail('Purefitness')"><div class="brand-dot"></div><div><div class="brand-name">Purefitness</div></div></div>
+      <div class="brand-card" onclick="showDetail('Sanotact')"><div class="brand-dot"></div><div><div class="brand-name">Sanotact</div></div></div>
+      <div class="brand-card" onclick="showDetail('Scheunengut')"><div class="brand-dot"></div><div><div class="brand-name">Scheunengut</div></div></div>
+      <div class="brand-card" onclick="showDetail('Syglabs')"><div class="brand-dot"></div><div><div class="brand-name">Syglabs</div></div></div>
+      <div class="brand-card" onclick="showDetail('Vihado')"><div class="brand-dot"></div><div><div class="brand-name">Vihado</div></div></div>
+      <div class="brand-card" onclick="showDetail('Vit4ever')"><div class="brand-dot"></div><div><div class="brand-name">Vit4ever</div></div></div>
+      <div class="brand-card" onclick="showDetail('Vita2You')"><div class="brand-dot"></div><div><div class="brand-name">Vita2You</div></div></div>
+      <div class="brand-card" onclick="showDetail('Vitality Nutritionals')"><div class="brand-dot"></div><div><div class="brand-name">Vitality Nutritionals</div></div></div>
+      <div class="brand-card" onclick="showDetail('Vitamaze')"><div class="brand-dot"></div><div><div class="brand-name">Vitamaze</div></div></div>
+      <div class="brand-card" onclick="showDetail('Vitavea')"><div class="brand-dot"></div><div><div class="brand-name">Vitavea</div></div></div>
     </div>
   </div>
 
-  <!-- TIER 4 -->
   <div class="tier-section tier-4" data-tier="4">
     <div class="tier-header" onclick="toggleTier(this)">
       <div class="tier-badge">📉</div>
       <div class="tier-title-group">
         <div class="tier-number">Tier 4</div>
         <div class="tier-name">Mass Market / Opacity</div>
-        <div class="tier-desc">Aggressiv, undurchsichtig, Export-Brands</div>
+        <div class="tier-desc" data-i18n="t4desc"></div>
       </div>
-      <div class="tier-count" id="count-4">27 Marken</div>
+      <div class="tier-count">27 <span data-i18n="brandsWord"></span></div>
       <div class="tier-chevron">›</div>
     </div>
     <div class="brand-grid">
-      <div class="brand-card" onclick="showDetail('7 Elements','4')"><div class="brand-dot"></div><div><div class="brand-name">7 Elements</div></div></div>
-      <div class="brand-card" onclick="showDetail('Bandini Pharma','4')"><div class="brand-dot"></div><div><div class="brand-name">Bandini Pharma</div></div></div>
-      <div class="brand-card" onclick="showDetail('BIODYNAMX','4')"><div class="brand-dot"></div><div><div class="brand-name">BIODYNAMX</div></div></div>
-      <div class="brand-card" onclick="showDetail('Bodylab24','4')"><div class="brand-dot"></div><div><div class="brand-name">Bodylab24</div></div></div>
-      <div class="brand-card" onclick="showDetail('Cestfilo','4')"><div class="brand-dot"></div><div><div class="brand-name">Cestfilo</div></div></div>
-      <div class="brand-card" onclick="showDetail('Cheroline','4')"><div class="brand-dot"></div><div><div class="brand-name">Cheroline</div></div></div>
-      <div class="brand-card" onclick="showDetail('Daily Nature','4')"><div class="brand-dot"></div><div><div class="brand-name">Daily Nature</div></div></div>
-      <div class="brand-card" onclick="showDetail('Evolve Nutrition','4')"><div class="brand-dot"></div><div><div class="brand-name">Evolve Nutrition</div></div></div>
-      <div class="brand-card" onclick="showDetail('EXVital','4')"><div class="brand-dot"></div><div><div class="brand-name">EXVital</div></div></div>
-      <div class="brand-card" onclick="showDetail('Gozitepe','4')"><div class="brand-dot"></div><div><div class="brand-name">Gozitepe</div></div></div>
-      <div class="brand-card" onclick="showDetail('GreenLab','4')"><div class="brand-dot"></div><div><div class="brand-name">GreenLab</div></div></div>
-      <div class="brand-card" onclick="showDetail('Horbäach','4')"><div class="brand-dot"></div><div><div class="brand-name">Horbäach</div></div></div>
-      <div class="brand-card" onclick="showDetail('J.Armor','4')"><div class="brand-dot"></div><div><div class="brand-name">J.Armor</div></div></div>
-      <div class="brand-card" onclick="showDetail('Kinoko Life','4')"><div class="brand-dot"></div><div><div class="brand-name">Kinoko Life</div></div></div>
-      <div class="brand-card" onclick="showDetail('Lumarejebo','4')"><div class="brand-dot"></div><div><div class="brand-name">Lumarejebo</div></div></div>
-      <div class="brand-card" onclick="showDetail('Nature Well','4')"><div class="brand-dot"></div><div><div class="brand-name">Nature Well</div></div></div>
-      <div class="brand-card" onclick="showDetail('NaturElan','4')"><div class="brand-dot"></div><div><div class="brand-name">NaturElan</div></div></div>
-      <div class="brand-card" onclick="showDetail('Nutri Brain','4')"><div class="brand-dot"></div><div><div class="brand-name">Nutri Brain</div></div></div>
-      <div class="brand-card" onclick="showDetail('NUTRICEL','4')"><div class="brand-dot"></div><div><div class="brand-name">NUTRICEL</div></div></div>
-      <div class="brand-card" onclick="showDetail('Nutrioto','4')"><div class="brand-dot"></div><div><div class="brand-name">Nutrioto</div></div></div>
-      <div class="brand-card" onclick="showDetail('Plantiq & Partner','4')"><div class="brand-dot"></div><div><div class="brand-name">Plantiq & Partner</div></div></div>
-      <div class="brand-card" onclick="showDetail('Prime Elements','4')"><div class="brand-dot"></div><div><div class="brand-name">Prime Elements</div></div></div>
-      <div class="brand-card" onclick="showDetail('Raibu','4')"><div class="brand-dot"></div><div><div class="brand-name">Raibu</div></div></div>
-      <div class="brand-card" onclick="showDetail('Restaxil','4')"><div class="brand-dot"></div><div><div class="brand-name">Restaxil</div></div></div>
-      <div class="brand-card" onclick="showDetail('Solavica','4')"><div class="brand-dot"></div><div><div class="brand-name">Solavica</div></div></div>
-      <div class="brand-card" onclick="showDetail('WeightWorld','4')"><div class="brand-dot"></div><div><div class="brand-name">WeightWorld</div></div></div>
-      <div class="brand-card" onclick="showDetail('Zenement','4')"><div class="brand-dot"></div><div><div class="brand-name">Zenement</div></div></div>
+      <div class="brand-card" onclick="showDetail('7 Elements')"><div class="brand-dot"></div><div><div class="brand-name">7 Elements</div></div></div>
+      <div class="brand-card" onclick="showDetail('Bandini Pharma')"><div class="brand-dot"></div><div><div class="brand-name">Bandini Pharma</div></div></div>
+      <div class="brand-card" onclick="showDetail('BIODYNAMX')"><div class="brand-dot"></div><div><div class="brand-name">BIODYNAMX</div></div></div>
+      <div class="brand-card" onclick="showDetail('Bodylab24')"><div class="brand-dot"></div><div><div class="brand-name">Bodylab24</div></div></div>
+      <div class="brand-card" onclick="showDetail('Cestfilo')"><div class="brand-dot"></div><div><div class="brand-name">Cestfilo</div></div></div>
+      <div class="brand-card" onclick="showDetail('Cheroline')"><div class="brand-dot"></div><div><div class="brand-name">Cheroline</div></div></div>
+      <div class="brand-card" onclick="showDetail('Daily Nature')"><div class="brand-dot"></div><div><div class="brand-name">Daily Nature</div></div></div>
+      <div class="brand-card" onclick="showDetail('Evolve Nutrition')"><div class="brand-dot"></div><div><div class="brand-name">Evolve Nutrition</div></div></div>
+      <div class="brand-card" onclick="showDetail('EXVital')"><div class="brand-dot"></div><div><div class="brand-name">EXVital</div></div></div>
+      <div class="brand-card" onclick="showDetail('Gozitepe')"><div class="brand-dot"></div><div><div class="brand-name">Gozitepe</div></div></div>
+      <div class="brand-card" onclick="showDetail('GreenLab')"><div class="brand-dot"></div><div><div class="brand-name">GreenLab</div></div></div>
+      <div class="brand-card" onclick="showDetail('Horbäach')"><div class="brand-dot"></div><div><div class="brand-name">Horbäach</div></div></div>
+      <div class="brand-card" onclick="showDetail('J.Armor')"><div class="brand-dot"></div><div><div class="brand-name">J.Armor</div></div></div>
+      <div class="brand-card" onclick="showDetail('Kinoko Life')"><div class="brand-dot"></div><div><div class="brand-name">Kinoko Life</div></div></div>
+      <div class="brand-card" onclick="showDetail('Lumarejebo')"><div class="brand-dot"></div><div><div class="brand-name">Lumarejebo</div></div></div>
+      <div class="brand-card" onclick="showDetail('Nature Well')"><div class="brand-dot"></div><div><div class="brand-name">Nature Well</div></div></div>
+      <div class="brand-card" onclick="showDetail('NaturElan')"><div class="brand-dot"></div><div><div class="brand-name">NaturElan</div></div></div>
+      <div class="brand-card" onclick="showDetail('Nutri Brain')"><div class="brand-dot"></div><div><div class="brand-name">Nutri Brain</div></div></div>
+      <div class="brand-card" onclick="showDetail('NUTRICEL')"><div class="brand-dot"></div><div><div class="brand-name">NUTRICEL</div></div></div>
+      <div class="brand-card" onclick="showDetail('Nutrioto')"><div class="brand-dot"></div><div><div class="brand-name">Nutrioto</div></div></div>
+      <div class="brand-card" onclick="showDetail('Plantiq & Partner')"><div class="brand-dot"></div><div><div class="brand-name">Plantiq &amp; Partner</div></div></div>
+      <div class="brand-card" onclick="showDetail('Prime Elements')"><div class="brand-dot"></div><div><div class="brand-name">Prime Elements</div></div></div>
+      <div class="brand-card" onclick="showDetail('Raibu')"><div class="brand-dot"></div><div><div class="brand-name">Raibu</div></div></div>
+      <div class="brand-card" onclick="showDetail('Restaxil')"><div class="brand-dot"></div><div><div class="brand-name">Restaxil</div></div></div>
+      <div class="brand-card" onclick="showDetail('Solavica')"><div class="brand-dot"></div><div><div class="brand-name">Solavica</div></div></div>
+      <div class="brand-card" onclick="showDetail('WeightWorld')"><div class="brand-dot"></div><div><div class="brand-name">WeightWorld</div></div></div>
+      <div class="brand-card" onclick="showDetail('Zenement')"><div class="brand-dot"></div><div><div class="brand-name">Zenement</div></div></div>
     </div>
   </div>
 
-  <!-- TIER 5 -->
   <div class="tier-section tier-5" data-tier="5">
     <div class="tier-header" onclick="toggleTier(this)">
       <div class="tier-badge">⚠️</div>
       <div class="tier-title-group">
         <div class="tier-number">Tier 5</div>
-        <div class="tier-name">Red Flag / Nische</div>
-        <div class="tier-desc">Wenig Transparenz, reine Importe, Vorsicht geboten</div>
+        <div class="tier-name">Red Flag</div>
+        <div class="tier-desc" data-i18n="t5desc"></div>
       </div>
-      <div class="tier-count" id="count-5">13 Marken</div>
+      <div class="tier-count">13 <span data-i18n="brandsWord"></span></div>
       <div class="tier-chevron">›</div>
     </div>
     <div class="brand-grid">
-      <div class="brand-card" onclick="showDetail('Amando Perez','5')"><div class="brand-dot"></div><div><div class="brand-name">Amando Perez</div></div></div>
-      <div class="brand-card" onclick="showDetail('Best Immune','5')"><div class="brand-dot"></div><div><div class="brand-name">Best Immune</div></div></div>
-      <div class="brand-card" onclick="showDetail('Bloom Naturals Beauty','5')"><div class="brand-dot"></div><div><div class="brand-name">Bloom Naturals Beauty</div></div></div>
-      <div class="brand-card" onclick="showDetail('Element One','5')"><div class="brand-dot"></div><div><div class="brand-name">Element One</div></div></div>
-      <div class="brand-card" onclick="showDetail('Greenlab Nutrition','5')"><div class="brand-dot"></div><div><div class="brand-name">Greenlab Nutrition</div></div></div>
-      <div class="brand-card" onclick="showDetail('HealthyWorld','5')"><div class="brand-dot"></div><div><div class="brand-name">HealthyWorld</div></div></div>
-      <div class="brand-card" onclick="showDetail('JKR-Spices','5')"><div class="brand-dot"></div><div><div class="brand-name">JKR-Spices</div></div></div>
-      <div class="brand-card" onclick="showDetail('Nature Diet','5')"><div class="brand-dot"></div><div><div class="brand-name">Nature Diet</div></div></div>
-      <div class="brand-card" onclick="showDetail('Nature Spring','5')"><div class="brand-dot"></div><div><div class="brand-name">Nature Spring</div></div></div>
-      <div class="brand-card" onclick="showDetail('Naturkur','5')"><div class="brand-dot"></div><div><div class="brand-name">Naturkur</div></div></div>
-      <div class="brand-card" onclick="showDetail('Regio','5')"><div class="brand-dot"></div><div><div class="brand-name">Regio</div></div></div>
-      <div class="brand-card" onclick="showDetail('Stivits','5')"><div class="brand-dot"></div><div><div class="brand-name">Stivits</div></div></div>
-      <div class="brand-card" onclick="showDetail('Vitabay','5')"><div class="brand-dot"></div><div><div class="brand-name">Vitabay</div></div></div>
+      <div class="brand-card" onclick="showDetail('Amando Perez')"><div class="brand-dot"></div><div><div class="brand-name">Amando Perez</div></div></div>
+      <div class="brand-card" onclick="showDetail('Best Immune')"><div class="brand-dot"></div><div><div class="brand-name">Best Immune</div></div></div>
+      <div class="brand-card" onclick="showDetail('Bloom Naturals Beauty')"><div class="brand-dot"></div><div><div class="brand-name">Bloom Naturals Beauty</div></div></div>
+      <div class="brand-card" onclick="showDetail('Element One')"><div class="brand-dot"></div><div><div class="brand-name">Element One</div></div></div>
+      <div class="brand-card" onclick="showDetail('Greenlab Nutrition')"><div class="brand-dot"></div><div><div class="brand-name">Greenlab Nutrition</div></div></div>
+      <div class="brand-card" onclick="showDetail('HealthyWorld')"><div class="brand-dot"></div><div><div class="brand-name">HealthyWorld</div></div></div>
+      <div class="brand-card" onclick="showDetail('JKR-Spices')"><div class="brand-dot"></div><div><div class="brand-name">JKR-Spices</div></div></div>
+      <div class="brand-card" onclick="showDetail('Nature Diet')"><div class="brand-dot"></div><div><div class="brand-name">Nature Diet</div></div></div>
+      <div class="brand-card" onclick="showDetail('Nature Spring')"><div class="brand-dot"></div><div><div class="brand-name">Nature Spring</div></div></div>
+      <div class="brand-card" onclick="showDetail('Naturkur')"><div class="brand-dot"></div><div><div class="brand-name">Naturkur</div></div></div>
+      <div class="brand-card" onclick="showDetail('Regio')"><div class="brand-dot"></div><div><div class="brand-name">Regio</div></div></div>
+      <div class="brand-card" onclick="showDetail('Stivits')"><div class="brand-dot"></div><div><div class="brand-name">Stivits</div></div></div>
+      <div class="brand-card" onclick="showDetail('Vitabay')"><div class="brand-dot"></div><div><div class="brand-name">Vitabay</div></div></div>
     </div>
   </div>
 
   </div><!-- /tierContainer -->
 
-  <!-- Legend -->
   <div class="legend">
-    <div class="legend-title">Bewertungskriterien</div>
+    <div class="legend-title" data-i18n="legendTitle"></div>
     <div class="legend-grid">
-      <div class="legend-item">
-        <div class="legend-tier-name" style="color:var(--t1-color)">🥇 Tier 1 – Elite</div>
-        <div class="legend-tier-desc">Öffentliche COAs pro Charge, patentierte Rohstoffe, Glasverpackung als Standard</div>
-      </div>
-      <div class="legend-item">
-        <div class="legend-tier-name" style="color:var(--t2-color)">🥈 Tier 2 – High Reliability</div>
-        <div class="legend-tier-desc">Eigene Produktion, GMP/Kölner Liste, Markenrohstoffe, hohe interne Standards</div>
-      </div>
-      <div class="legend-item">
-        <div class="legend-tier-name" style="color:var(--t3-color)">🥉 Tier 3 – Solid Standard</div>
-        <div class="legend-tier-desc">Seriöse Private-Label-Ware, geprüft, aber ohne Premium-Features</div>
-      </div>
-      <div class="legend-item">
-        <div class="legend-tier-name" style="color:var(--t4-color)">📉 Tier 4 – Mass Market</div>
-        <div class="legend-tier-desc">Undurchsichtige Import-Strukturen, aggressives Marketing, kaum Transparenz</div>
-      </div>
-      <div class="legend-item">
-        <div class="legend-tier-name" style="color:var(--t5-color)">⚠️ Tier 5 – Red Flag</div>
-        <div class="legend-tier-desc">Schwieriges Impressum, Dropshipping-Verdacht, falsche Versprechen</div>
-      </div>
+      <div class="legend-item"><div class="legend-tier-name" style="color:var(--t1-color)">🥇 Tier 1 – Elite</div><div class="legend-tier-desc" data-i18n="leg1"></div></div>
+      <div class="legend-item"><div class="legend-tier-name" style="color:var(--t2-color)">🥈 Tier 2 – High Reliability</div><div class="legend-tier-desc" data-i18n="leg2"></div></div>
+      <div class="legend-item"><div class="legend-tier-name" style="color:var(--t3-color)">🥉 Tier 3 – Solid Standard</div><div class="legend-tier-desc" data-i18n="leg3"></div></div>
+      <div class="legend-item"><div class="legend-tier-name" style="color:var(--t4-color)">📉 Tier 4 – Mass Market</div><div class="legend-tier-desc" data-i18n="leg4"></div></div>
+      <div class="legend-item"><div class="legend-tier-name" style="color:var(--t5-color)">⚠️ Tier 5 – Red Flag</div><div class="legend-tier-desc" data-i18n="leg5"></div></div>
     </div>
   </div>
 
   <footer>
-    <span>Supplement-Marken Tier-List · Stand März 2026</span>
-    <span>80+ Marken · Kontinuierlich geprüft</span>
+    <span data-i18n="footerL"></span>
+    <span data-i18n="footerR"></span>
   </footer>
-
 </div>
 
 <script>
-// ── Brand detail data ──
-const brandData = {
-  'Age-Science': { tier: 1, desc: 'NMN-Pionier in Deutschland (seit 2019). Spezialist für Zellgesundheit und NAD+-Precursor. Öffentliche COAs abrufbar, sehr transparente Rohstoffkommunikation.', notes: [] },
-  'Feel Natural': { tier: 1, desc: 'Marke der Natsana GmbH. Schwestermarken: Nature Love, Natural Elements, Gloryfeel. Jede Charge laborgeprüft und öffentlich einsehbar. Made in Germany, keine unnötigen Zusätze.', notes: [{type:'info', text:'Seit 2025 vollständig mit Gloryfeel unter Bayer AG fusioniert. Qualitätsstandards weiterhin bestätigt.'}] },
-  'for you eHealth': { tier: 1, desc: 'Deutsche Marke ("Messen-Wissen-Handeln"). Kombination aus Bluttests und präzise abgestimmten NEMs. Sehr transparent, evidenzbasierter Ansatz.', notes: [] },
-  'Longevity Box': { tier: 1, desc: 'UK-Longevity-Spezialist mit sehr hoher Transparenz. Fokus auf wissenschaftlich belegte Anti-Aging-Wirkstoffe. Öffentliche Laborberichte.', notes: [] },
-  'MoleQlar': { tier: 1, desc: 'Deutscher, ärztlich geführter Longevity-Shop. Extrem strenge Qualitätskontrollen, patentierte Rohstoffe, öffentliche Zertifikate pro Charge.', notes: [] },
-  'Nature Love / Natural Elements': { tier: 1, desc: 'Massenmarkt-Marken der Natsana GmbH mit Tier-1-Transparenz. Jede Charge per Laborbericht online abrufbar. Made in Germany. Schwestermarken: Feel Natural, Gloryfeel.', notes: [{type:'info', text:'Seit 2025 vollständig mit Gloryfeel unter Bayer AG fusioniert. Qualitätsstandards weiterhin bestätigt.'}] },
-  'NOVOS Labs': { tier: 1, desc: 'US-Wissenschaftsmarke für Longevity. Basiert auf fundierten Studien und einem wissenschaftlichen Beirat. Sehr transparente Produktkommunikation.', notes: [] },
-  'Qidosha': { tier: 1, desc: 'Premium-Qualität durchgehend in Glasverpackung. Sehr reine Rohstoffe, konsequent plastikfrei. Einer der wenigen Anbieter mit konsequenter Glas-Strategie.', notes: [] },
-
-  'Best Body Nutrition': { tier: 2, desc: 'Deutsche Traditionsmarke im Fitnesssegment mit langer Geschichte. Solide Qualität, eigene Produktion.', notes: [] },
-  'Big Zone': { tier: 2, desc: 'Berliner Urgestein der deutschen Bodybuilding-Szene ("No Bullshit"). Hohe Transparenz durch veröffentlichte Analysen, extrem hohe Dosierungen, Made in Germany.', notes: [] },
-  'ESN': { tier: 2, desc: 'Marktführer Deutschland (The Quality Group), eigene Produktion in Elmshorn, Kölner Liste. Umsatz 2023/24 ~800 Mio. € (gemeinsam mit More Nutrition). Schwestermarke More Nutrition hat massive Rechtsprobleme.', notes: [{type:'warning', text:'⚠️ Schwestermarke More Nutrition: ZDF Magazin Royale (2023), Verbraucherzentrale NRW-Klage (LG Hamburg, Niederlage 2024), foodwatch-Klage (LG Schleswig-Holstein, Niederlage Sept. 2024) wegen irreführender Gesundheitsversprechen. ESN selbst qualitativ stark.'}, {type:'info', text:'CVC Capital Partners hält 81 % seit 2022 – gleicher Investor wie Sunday Natural (separate Gesellschaften).'}] },
-  'Igennus': { tier: 2, desc: 'Britische Wissenschaftsmarke. Exzellent bei Omega-3 (IFOS-zertifiziert) und bioverfügbaren Nährstoffen (VESIsorb-Technologie). GMP-Standard.', notes: [] },
-  'Kinetica': { tier: 2, desc: 'Irischer Hersteller (Kerry Group), eigene Rohstoffe, starker Fokus auf Profisport.', notes: [] },
-  'Life Extension': { tier: 2, desc: 'US-Premium-Marke, Forschungspionier mit jahrzehntelanger Geschichte. Eigene Forschungsabteilung, sehr hohes Produktportfolio.', notes: [] },
-  'MST Nutrition': { tier: 2, desc: 'Deutsche Sportmarke (FI Fitness Inspiration GmbH). Nutzt Markenrohstoffe (Creapure, Carnipure). Made in Germany, seriös, aber keine öffentliche Lab-Datenbank.', notes: [] },
-  'Natures Plus': { tier: 2, desc: 'US-Traditionsmarke ("Source of Life", Natural Organics Inc.). Eigene Produktion, sehr hohe interne Standards.', notes: [] },
-  'NatuGena': { tier: 2, desc: 'Deutsche Therapeuten-Marke aus Ingolstadt. Fokus auf orthomolekulare Medizin, verschrieben von Ärzten und Heilpraktikern.', notes: [] },
-  'Naturtreu': { tier: 2, desc: 'Zenkoh GmbH, Buxtehude bei Hamburg. Seit 2024 auf der Kölner Liste®. GMP + ISO 9001 + HACCP, Made in Germany, 100 % vegan, PETA-zertifiziert. Unabhängige Laborprüfungen, aber keine öffentliche per-Charge-Datenbank.', notes: [{type:'success', text:'Kölner Liste® bestätigt (2024). Klimaneutral zertifiziert. Sehr durchdachte Komplexpräparate, entwickelt mit Ärzten und Heilpraktikern.'}] },
-  'Neotes': { tier: 2, desc: 'Longevity-Forschungsprojekt aus UK/DE. Fokus auf biologische Verjüngung und Anti-Aging.', notes: [] },
-  'NOW Foods': { tier: 2, desc: 'US-Riese mit extrem gutem internen Labor. GMP-zertifiziert, sehr breites und zuverlässiges Sortiment. NOW Foods testet regelmäßig Konkurrenzprodukte.', notes: [] },
-  'Nutri+': { tier: 2, desc: 'Vegane Sportnahrung, transparent & gut. Führender veganer Anbieter im deutschsprachigen Markt.', notes: [] },
-  'Olimp': { tier: 2, desc: 'Pharma-Konzern aus Polen. Produziert für viele andere Marken. Hochmoderne Anlagen, Top-Qualitätsstandards.', notes: [] },
-  'Optimum Nutrition': { tier: 2, desc: 'Glanbia-Konzern. Weltweiter Standard für Whey-Proteinpulver. Jahrzehntelange Geschichte, sehr konstante Qualität.', notes: [] },
-  'Primal State': { tier: 2, desc: 'Primal State Performance GmbH, Berlin (gegr. 2017). Biohacking-Lifestyle-Marke. Sehr saubere Formulierungen, Made in Germany, vegan, keine unnötigen Zusätze.', notes: [{type:'info', text:'ℹ️ Neu in Tier 2 (vorher Tier 1). Laborgeprüft intern kommuniziert, aber keine öffentlich abrufbaren per-Charge-COAs und keine konsequente Glasverpackung. Neue Geschäftsführung seit April 2025.'}] },
-  'ProFuel': { tier: 2, desc: 'Vegane Sportmarke, Made in Germany. Pionier für vegane Sportnahrung in Deutschland.', notes: [] },
-  'Raab Vitalfood': { tier: 2, desc: 'Deutscher Bio-Pionier. Fokus auf pflanzliche Nährstoffdichte und Bio-Zertifizierung.', notes: [] },
-  'Redfood Nature': { tier: 2, desc: 'Solide deutsche Qualitätsmarke.', notes: [] },
-  'Ruehl24': { tier: 2, desc: 'Markus Rühl. Ehrliche Sportnahrung ohne unnötigen Schnickschnack, "No-Nonsense"-Ansatz.', notes: [] },
-  'Sanuvit': { tier: 2, desc: 'Österreichische Manufaktur. Apotheken-Qualität, Fokus auf Reinsubstanzen ohne unnötige Füllstoffe.', notes: [] },
-  'Science in Sport': { tier: 2, desc: 'bd-capital. UK-Marktführer für Ausdauer-Ernährung. Fast alles Informed Sport zertifiziert (Doping-frei). Eigene Forschung und Entwicklung.', notes: [] },
-  'Solvisan': { tier: 2, desc: 'Sehr reine Apotheken-Marke, gute Verträglichkeit. Fokus auf hochwertige Reinsubstanzen.', notes: [] },
-  'Source of Nature': { tier: 2, desc: 'P&H ApS, Dänemark. Spezialisiert auf Longevity-Wirkstoffe (NMN, Resveratrol). Hohe Qualität, aber keine öffentlichen per-Charge-Analysen wie in Tier 1.', notes: [] },
-  'Sunday Natural': { tier: 2, desc: 'Riesiges Premium-Sortiment (1.000+ Produkte), sehr hochwertige Rohstoffe, True Clean Label Philosophie. Gründer Jörg Schweikart bleibt beteiligt.', notes: [{type:'warning', text:'Seit April 2024 von CVC Capital Partners übernommen (ca. 875 Mio. USD). Keine lückenlose Chargen-Transparenz für Endkunden, Service-Probleme nach Übernahme gemeldet. Unter Beobachtung, bleibt wegen Rohstoff-Exzellenz in Tier 2.'}, {type:'info', text:'Gleicher PE-Investor (CVC) wie The Quality Group (ESN/More Nutrition). Beide Unternehmen operieren vollständig unabhängig.'}] },
-  'Swanson': { tier: 2, desc: 'US-Traditionsmarke. Sehr günstig, aber sicher und zuverlässig. Breites Sortiment.', notes: [] },
-  'TNT': { tier: 2, desc: 'True Nutrition Technology. Extrem evidenzbasiert (bekannt durch Marcus Michalak). Fokus auf wissenschaftlich belegte Dosierungen.', notes: [] },
-  'Vetain': { tier: 2, desc: 'Vetain GmbH, Zorneding bei München (gegr. 2020). Bio-zertifiziert (DE-ÖKO-007), plastikfreie Verpackung (Sonoco GreenCan), Laboranalysen via Agrolab öffentlich auf Produktseiten, IFS-zertifizierte Produktion Made in Germany.', notes: [{type:'success', text:'200.000+ Kunden, ~20 Mio. € Umsatz. Starke Tier-1-Elemente bei Transparenz und Verpackung.'}] },
-  'Vitaworld': { tier: 2, desc: 'Vita-World GmbH, Taunusstein. Solide deutsche Marke. Veröffentlicht echte Analyse-Zertifikate (PDFs) direkt bei den Produkten. Sehr transparent und preiswert.', notes: [] },
-  'Wehle Sports': { tier: 2, desc: 'Solide deutsche Sportmarke mit gutem Preis-Leistungs-Verhältnis.', notes: [] },
-  'WFN': { tier: 2, desc: 'Evidenzbasierte Sportnahrung mit Fokus auf wissenschaftlich belegte Dosierungen.', notes: [] },
-
-  'AAVALABS': { tier: 3, desc: 'Finnische Wurzeln, solide Amazon-Brand. Standard-Qualität.', notes: [] },
-  'Aldous Bio': { tier: 3, desc: 'Spanische Marke mit Fokus auf plastikfreie Verpackung und Bio-Zertifizierung.', notes: [] },
-  'AlphaVitalis': { tier: 3, desc: 'Solide Sport-Supplements im Standardsegment.', notes: [] },
-  'Alps Nature': { tier: 3, desc: 'Alps Pure GmbH, Österreich. Fokus auf Natürlichkeit. Solide Qualität, transparentes Impressum, aber keine öffentlichen Labordaten.', notes: [] },
-  'Amazing Nature': { tier: 3, desc: 'Solide deutsche Standardware im mittleren Preissegment.', notes: [] },
-  'APOrtha': { tier: 3, desc: 'NordFit Sporternährung. Deutsche Marke seit ca. 2005. Gute Transparenz bei Inhaltsstoffen, nutzt Markenrohstoffe wie Kaneka. Keine öffentliche Labordatenbank.', notes: [] },
-  'Bio Medical Pharma': { tier: 3, desc: 'BMPharma GmbH. Deutsche Marke, Fokus auf "Science & Nature" (Beauty, Curcumin). Solider Standard.', notes: [] },
-  'BIO Protect B.V.': { tier: 3, desc: 'Niederländische Marke, solide Basics-Produkte.', notes: [] },
-  'Biotary': { tier: 3, desc: 'Günstige Standardware. Sicher, aber ohne besondere Merkmale.', notes: [] },
-  'Blattwerk': { tier: 3, desc: 'Junge deutsche Marke (gegr. 2020). Breites Sortiment, in Apotheken gelistet (PZN). Solide und sicher.', notes: [] },
-  'Boderra': { tier: 3, desc: 'Spezialisiert u. a. auf Shilajit. Wirkt ehrlich und transparent.', notes: [] },
-  'Bulk': { tier: 3, desc: 'Ehemals Bulk Powders. Großer UK-Hersteller. Günstiger Massenmarkt mit eigener Produktion.', notes: [] },
-  'CDF Sports & Health': { tier: 3, desc: 'Kleiner deutscher Familienbetrieb. Persönlich geführt.', notes: [] },
-  'Cosphera': { tier: 3, desc: 'Premium-Beauty-NEMs aus Österreich/DE. Fokus auf Haut- und Beauty-Supplements.', notes: [] },
-  'Double Wood': { tier: 3, desc: 'US-Nischen-Spezialist für Nootropika. Veröffentlicht COAs (sehr gut), fiel aber in unabhängigen Tests teilweise negativ auf (Underdosing).', notes: [{type:'warning', text:'Vereinzelt Underdosing in unabhängigen Tests festgestellt. COAs werden veröffentlicht, aber Prüfung empfohlen.'}] },
-  'DPG Delnava Pharma': { tier: 3, desc: 'Kerpen. Deutscher Lohnhersteller mit Apotheken-Produkten (u. a. Elektrolyte). Sicher und seriös.', notes: [] },
-  'Effective Nature': { tier: 3, desc: 'Hausmarke der Fair Trade Handels AG. Über "Zentrum der Gesundheit" vermarktet. Gute Standard-Qualität, aber Marketing-Verflechtung kritisch zu betrachten.', notes: [] },
-  'Elixirvit': { tier: 3, desc: 'Fokus auf patentierte Rohstoffe (NovaSOL Curcumin). Gute Inhaltsstoffe, Nischen-Brand.', notes: [] },
-  'EWL Naturprodukte': { tier: 3, desc: 'Teil der VitaminVersand24-Gruppe. Schwestermarken: GEN, Vit4ever. Solide Standardware.', notes: [] },
-  'Ezyleaf': { tier: 3, desc: 'BW Ecommerce Ltd. UK-Handelsmarke, verbunden mit Mega Nutrition. Solide Standard-Qualität ("Made in UK"), aber keine tiefe Transparenz.', notes: [] },
-  'German Elite Nutrition': { tier: 3, desc: 'VitaminVersand24. Schwestermarken: Vit4ever, EWL. Preis-Leistungs-Sieger. Richtet sich an ambitionierte Athleten. Nutzt hochwertige Markenrohstoffe (K2Vital, Magnafolat Pro).', notes: [] },
-  'Gloryfeel': { tier: 3, desc: 'D2C-Marke aus Hamburg, seit Bayer-Übernahme 2022 Teil des Pharmakonzerns. Schwestermarken (unter Bayer): Nature Love, Natural Elements, Feel Natural. Eigene Produktion, gute Qualität.', notes: [{type:'info', text:'Seit 2025 vollständig mit Natsana GmbH unter Bayer AG fusioniert. Die Natsana-Marken (Nature Love, Natural Elements, Feel Natural) bleiben wegen ihrem strikten COA-Protokoll in Tier 1 – Gloryfeel selbst hat keine öffentlichen per-Charge-COAs.'}] },
-  'Green Naturals': { tier: 3, desc: 'Gute deutsche Qualität. Fokus auf natürliche Inhaltsstoffe.', notes: [] },
-  'Gym-Nutrition': { tier: 3, desc: 'Hamburg. Made in Germany. Solide Sportnahrung.', notes: [] },
-  'Hepatica': { tier: 3, desc: 'Polnische Manufaktur (Sławomir Rasiński). Spezialisiert auf Pflanzenextrakte. Clean Label, keine unnötigen Zusätze.', notes: [] },
-  'Her One': { tier: 3, desc: 'Berliner Lifestyle-Marke (Chanyu Xu). Bio-zertifiziert, Fokus auf Darm- und Frauengesundheit.', notes: [] },
-  'Hivital': { tier: 3, desc: 'Spanische Marke. Preis-Leistungs-Sieger im europäischen Markt.', notes: [] },
-  'MGX': { tier: 3, desc: 'Magnesium Experten (SKYVE Atlas GmbH). Deutsche Nischenmarke für verschiedene Magnesium-Verbindungen.', notes: [] },
-  'Naturecan': { tier: 3, desc: 'UK-Marke (gegr. von Ex-Myprotein CEO). Exzellent bei CBD-Produkten, solide bei normalen Supplements.', notes: [] },
-  'Nutravita': { tier: 3, desc: 'UK-Marke (Karo Healthcare, Pharma). Sicherer Standard, breites Sortiment.', notes: [] },
-  'PharmaVital': { tier: 3, desc: 'PharmaVital GmbH, Bonn. Etablierte Apotheken-Marke (seit 2009). Made in Germany, sicher und geprüft.', notes: [] },
-  'PH PROWISE Healthcare': { tier: 3, desc: 'Prowise Healthcare, UK. Britische Marke mit echten Markenrohstoffen (Vitashine®, VitaMK7®, AB-Fortis®, Urophenol™), Made in UK. Keine öffentlichen COAs. Enthält Magnesiumstearat (E470b) und Siliziumdioxid (E551).', notes: [] },
-  'Plantomol': { tier: 3, desc: 'Spezial-Supplements für verschiedene Gesundheitsbereiche.', notes: [] },
-  'Purefitness': { tier: 3, desc: 'Solide Amazon-Marke (peaq Ventures).', notes: [] },
-  'Sanotact': { tier: 3, desc: 'Drogerie-Riese aus Münster. Breites Sortiment, solider Standard.', notes: [] },
-  'Scheunengut': { tier: 3, desc: 'Marketing-Brand, aber Inhalt okay. Standard-Qualität.', notes: [] },
-  'Syglabs': { tier: 3, desc: 'Lohnhersteller mit Eigenmarke. Günstige Preise.', notes: [] },
-  'Vihado': { tier: 3, desc: 'Etablierte Apotheken-Marke (Vihado GmbH & Co. KG, Kehl). Reguläre Laboranalysen und Herkunftsnachweise.', notes: [] },
-  'Vit4ever': { tier: 3, desc: 'VitaminVersand24. Schwestermarken: GEN, EWL. Der Preis-Leistungs-Klassiker. Richtet sich an Fitness-Lifestyle-Kunden.', notes: [] },
-  'Vita2You': { tier: 3, desc: 'Günstige Standardware. Sicher, aber ohne besondere Merkmale.', notes: [] },
-  'Vitality Nutritionals': { tier: 3, desc: 'Eigenmarke von VitaminExpress (USA/Niederlande). Großer Player im Markt, solide Qualität.', notes: [] },
-  'Vitamaze': { tier: 3, desc: 'Heidelberg. Guter Standard, breites Sortiment.', notes: [] },
-  'Vitavea': { tier: 3, desc: 'Frankreich, großer Anbieter. Solide und sicher.', notes: [] },
-
-  '7 Elements': { tier: 4, desc: 'Generische Amazon-Marke ohne erkennbare Hersteller-Transparenz.', notes: [] },
-  'Bandini Pharma': { tier: 4, desc: 'Italienischer Massenmarkt-Seller. Kaum Hintergrundinformationen verfügbar.', notes: [] },
-  'BIODYNAMX': { tier: 4, desc: 'BioDynamix, US-Marketing-Marke ("Joint Genesis"). Nutzt zwar Markenrohstoff Mobilee®, aber extrem aggressives "VSL"-Marketing, keine öffentlichen Analysen.', notes: [] },
-  'Bodylab24': { tier: 4, desc: 'Shop-Eigenmarke, eher günstig orientiert.', notes: [] },
-  'Cestfilo': { tier: 4, desc: 'Trademark: Li Xiaobing, China. Klassische Amazon-Export-Marke für hochdosierte Trendstoffe (NMN, Glutathion). Keine Transparenz zur Produktion.', notes: [] },
-  'Cheroline': { tier: 4, desc: 'Fokus auf trendy Gummies (Shilajit, Urolithin A, Probiotika). Keine öffentlichen Chargen-Analysen.', notes: [{type:'warning', text:'Im Januar 2025 durch Lebensmittelklarheit.de (Verbraucherzentrale) wegen "fragwürdiger Gummibärchen" und "wildem Potpourri an Gesundheitsversprechen" kritisiert.'}] },
-  'Daily Nature': { tier: 4, desc: 'Unauffällige Handelsmarke ohne erkennbare Transparenz.', notes: [] },
-  'Evolve Nutrition': { tier: 4, desc: 'Wenig Informationen verfügbar. Keine seriöse Hersteller-Dokumentation findbar.', notes: [] },
-  'EXVital': { tier: 4, desc: 'Marktplatz-Händler ohne klaren Hersteller-Hintergrund.', notes: [] },
-  'Gozitepe': { tier: 4, desc: 'Trademark: Xiuzheng Ltd, UK/China. Private Label Marke. Kein seriöser Background findbar.', notes: [] },
-  'GreenLab': { tier: 4, desc: 'Nicht zu verwechseln mit Green Naturals (Tier 3). Handelsmarke ohne erkennbare Transparenz.', notes: [{type:'warning', text:'Achtung: Nicht verwechseln mit Green Naturals (Tier 3)!'}] },
-  'Horbäach': { tier: 4, desc: 'Marke von Piping Rock (US). Produkte sind sicher, aber null Transparenz für EU-Kunden.', notes: [] },
-  'J.Armor': { tier: 4, desc: 'Italienische Marke mit "Pharma"-Image. Standard-Importware für den Massenmarkt, keine öffentlichen Laboranalysen.', notes: [] },
-  'Kinoko Life': { tier: 4, desc: 'Marketplace-Brand, nutzt Namensähnlichkeit zu US-Produkten.', notes: [] },
-  'Lumarejebo': { tier: 4, desc: 'Reine Fantasie-Marke ohne belegbare Historie oder Hersteller-Dokumentation.', notes: [] },
-  'Nature Well': { tier: 4, desc: 'US-Importware ohne substantielle Transparenz für EU-Kunden.', notes: [] },
-  'NaturElan': { tier: 4, desc: 'Wahrscheinliche chinesische Beteiligung. Wenig Transparenz.', notes: [] },
-  'Nutri Brain': { tier: 4, desc: 'Spanische E-Commerce-Marke (Nanoboost). Standard-Import.', notes: [] },
-  'NUTRICEL': { tier: 4, desc: 'Spanische FBA-Marke (Foodelis). Wenig Hintergrundinfos.', notes: [] },
-  'Nutrioto': { tier: 4, desc: 'Klein und wenig Informationen verfügbar.', notes: [] },
-  'Plantiq & Partner': { tier: 4, desc: 'Reiner Reseller-Betrieb ohne eigene Hersteller-Infrastruktur.', notes: [] },
-  'Prime Elements': { tier: 4, desc: 'Prime Elements GmbH, Berlin (2025). GmbH primär im Energierohstoffhandel tätig – fachfremder Hintergrund. Keine Laboranalysen.', notes: [{type:'warning', text:'Wirkt wie reine "Me-Too"-Brand (Namensähnlichkeit zu Natural Elements / 7 Elements) ohne eigene Supplement-Infrastruktur oder Analysen.'}] },
-  'Raibu': { tier: 4, desc: 'Import-Verdacht trotz "German"-Marketing.', notes: [] },
-  'Restaxil': { tier: 4, desc: 'PharmaSGP. Aggressives Marketing für Apothekenprodukte. Nutzen oft umstritten (Kritik durch "Gute Pillen Schlechte Pillen").', notes: [] },
-  'Solavica': { tier: 4, desc: 'Reine Amazon-Hülle ohne erkennbare Hersteller-Infrastruktur.', notes: [] },
-  'WeightWorld': { tier: 4, desc: 'Comfort Click. UK-Aggregator-Marke mit Fokus auf Masse und niedrige Preise.', notes: [] },
-  'Zenement': { tier: 4, desc: 'Spanischer Preisbrecher. Produkte sind sicher, aber reine Massenware ohne Qualitätsdifferenzierung.', notes: [] },
-
-  'Amando Perez': { tier: 5, desc: 'Handelsmarke von Vitabay (Niederlande). Gleiche Intransparenz wie Muttermarke Vitabay.', notes: [] },
-  'Best Immune': { tier: 5, desc: 'UK-Marke mit internen Querelen. Vorsicht geboten.', notes: [{type:'warning', text:'Ex-Direktoren haben öffentlich "Scam"-Vorwürfe erhoben.'}] },
-  'Bloom Naturals Beauty': { tier: 5, desc: 'Zu viel Lifestyle-Marketing, zu wenig substanzieller Inhalt. Keine nachprüfbare Qualitäts-Dokumentation.', notes: [] },
-  'Element One': { tier: 5, desc: 'Zu generisch. Keine erkennbare Hersteller-Infrastruktur oder Transparenz.', notes: [] },
-  'Greenlab Nutrition': { tier: 5, desc: 'Vorsicht wegen Namensgleichheit mit GreenLab (Tier 4). Keine seriöse Dokumentation.', notes: [{type:'warning', text:'Nicht zu verwechseln mit GreenLab (Tier 4) oder Green Naturals (Tier 3).'}] },
-  'HealthyWorld': { tier: 5, desc: 'Slowenischer Import mit minimaler Transparenz für Endkunden.', notes: [] },
-  'JKR-Spices': { tier: 5, desc: 'Eher Gewürzhändler ohne tiefe Supplement-Expertise oder entsprechende Qualitätszertifizierungen.', notes: [] },
-  'Nature Diet': { tier: 5, desc: 'Unklare Herkunft und Qualitätsstandards. Keine nachprüfbare Dokumentation.', notes: [] },
-  'Nature Spring': { tier: 5, desc: 'Dropshipping-Verdacht. Keine erkennbare eigene Hersteller-Infrastruktur.', notes: [] },
-  'Naturkur': { tier: 5, desc: 'Unbekannter Hintergrund. Keine transparente Unternehmenskommunikation.', notes: [] },
-  'Regio': { tier: 5, desc: 'Irreführendes Regionalitäts-Marketing ohne echten lokalen Produktionshintergrund.', notes: [] },
-  'Stivits': { tier: 5, desc: 'Hyperpharm OÜ. Estnische E-Commerce-Marke mit Lager in Lettland. Wenig Transparenz, klassischer Online-Reseller.', notes: [] },
-  'Vitabay': { tier: 5, desc: 'Riesiges Sortiment, Import-Struktur (NL), wenig Transparenz. Muttermarke von Amando Perez.', notes: [] },
+// ── i18n ──────────────────────────────────
+const STRINGS = {
+  de:{
+    eyebrow:'Stand März 2026 · Laufend aktualisiert',
+    title:'Supplement-Marken<br>Tier-List',
+    meta1:'80+ Marken bewertet', meta2:'5 Qualitätsstufen', meta3:'Letzte Prüfung: März 2026',
+    filterLabel:'Filter:', filterAll:'Alle anzeigen',
+    searchPlaceholder:'Marke suchen …', brandsWord:'Marken',
+    t1desc:'Chargen-Analysen öffentlich, Patente, Glas',
+    t2desc:'Sport/Medizin-Fokus, Manufakturen, hohe Standards',
+    t3desc:'Gute PL-Sieger, Konzern-Marken, solider Durchschnitt',
+    t4desc:'Aggressiv, undurchsichtig, Export-Brands',
+    t5desc:'Wenig Transparenz, reine Importe, Vorsicht geboten',
+    legendTitle:'Bewertungskriterien',
+    leg1:'Öffentliche COAs pro Charge, patentierte Rohstoffe, Glasverpackung als Standard',
+    leg2:'Eigene Produktion, GMP/Kölner Liste, Markenrohstoffe, hohe interne Standards',
+    leg3:'Seriöse Private-Label-Ware, geprüft, aber ohne Premium-Features',
+    leg4:'Undurchsichtige Import-Strukturen, aggressives Marketing, kaum Transparenz',
+    leg5:'Schwieriges Impressum, Dropshipping-Verdacht, falsche Versprechen',
+    footerL:'Supplement-Marken Tier-List · Stand März 2026',
+    footerR:'80+ Marken · Kontinuierlich geprüft',
+    resultsFound:(n,q)=>`${n} Treffer für „${q}"`,
+    resultsNone:(q)=>`Keine Marke gefunden für „${q}"`,
+  },
+  en:{
+    eyebrow:'As of March 2026 · Continuously updated',
+    title:'Supplement Brand<br>Tier List',
+    meta1:'80+ brands evaluated', meta2:'5 quality tiers', meta3:'Last review: March 2026',
+    filterLabel:'Filter:', filterAll:'Show all',
+    searchPlaceholder:'Search brand …', brandsWord:'brands',
+    t1desc:'Public batch COAs, patented ingredients, glass packaging',
+    t2desc:'Sports/medical focus, own manufacturing, high standards',
+    t3desc:'Solid private-label, reliable quality, no premium features',
+    t4desc:'Aggressive marketing, opaque structures, import shells',
+    t5desc:'Low transparency, dropshipping suspects, misleading claims',
+    legendTitle:'Rating Criteria',
+    leg1:'Publicly accessible per-batch COAs, patented raw materials, glass packaging as standard',
+    leg2:'Own production, GMP/Cologne List certified, branded ingredients, high internal standards',
+    leg3:'Reputable private-label products, tested, but without premium features',
+    leg4:'Opaque import structures, aggressive marketing, little transparency',
+    leg5:'Problematic company details, suspected dropshipping, false claims',
+    footerL:'Supplement Brand Tier List · March 2026',
+    footerR:'80+ brands · Continuously reviewed',
+    resultsFound:(n,q)=>`${n} result${n!==1?'s':''} for "${q}"`,
+    resultsNone:(q)=>`No brand found for "${q}"`,
+  }
 };
 
-const tierColors = { 1:'var(--t1-color)', 2:'var(--t2-color)', 3:'var(--t3-color)', 4:'var(--t4-color)', 5:'var(--t5-color)' };
-const tierBgColors = { 1:'var(--t1-bg)', 2:'var(--t2-bg)', 3:'var(--t3-bg)', 4:'var(--t4-bg)', 5:'var(--t5-bg)' };
-const tierBorderColors = { 1:'var(--t1-border)', 2:'var(--t2-border)', 3:'var(--t3-border)', 4:'var(--t4-border)', 5:'var(--t5-border)' };
-const tierEmojis = { 1:'🥇', 2:'🥈', 3:'🥉', 4:'📉', 5:'⚠️' };
-const tierNames = { 1:'Tier 1 – Elite', 2:'Tier 2 – High Reliability', 3:'Tier 3 – Solid Standard', 4:'Tier 4 – Mass Market', 5:'Tier 5 – Red Flag' };
+// ── Brand data ────────────────────────────
+const B = {
+  'Age-Science':{tier:1,
+    de:'NMN-Pionier in Deutschland (seit 2019). Spezialist für Zellgesundheit und NAD+-Precursor. Öffentliche COAs abrufbar, sehr transparente Rohstoffkommunikation.',
+    en:'NMN pioneer in Germany (since 2019). Specialist in cellular health and NAD+ precursors. Publicly accessible COAs, highly transparent ingredient communication.',notes:[]},
+  'Feel Natural':{tier:1,
+    de:'Marke der Natsana GmbH. Schwestermarken: Nature Love, Natural Elements, Gloryfeel. Jede Charge laborgeprüft und öffentlich einsehbar. Made in Germany, keine unnötigen Zusätze.',
+    en:'Brand by Natsana GmbH. Sister brands: Nature Love, Natural Elements, Gloryfeel. Every batch lab-tested with results publicly available. Made in Germany, no unnecessary additives.',
+    notes:[{t:'info',de:'Seit 2025 vollständig mit Gloryfeel unter Bayer AG fusioniert. Qualitätsstandards weiterhin bestätigt.',en:'Fully merged with Gloryfeel under Bayer AG since 2025. Quality standards remain confirmed.'}]},
+  'for you eHealth':{tier:1,
+    de:'Deutsche Marke ("Messen-Wissen-Handeln"). Kombination aus Bluttests und präzise abgestimmten NEMs. Sehr transparent, evidenzbasierter Ansatz.',
+    en:'German brand ("Measure-Know-Act"). Combination of blood tests and precisely tailored supplements. Highly transparent, evidence-based approach.',notes:[]},
+  'Longevity Box':{tier:1,
+    de:'UK-Longevity-Spezialist mit sehr hoher Transparenz. Fokus auf wissenschaftlich belegte Anti-Aging-Wirkstoffe. Öffentliche Laborberichte.',
+    en:'UK longevity specialist with very high transparency. Focus on scientifically validated anti-aging compounds. Public laboratory reports available.',notes:[]},
+  'MoleQlar':{tier:1,
+    de:'Deutscher, ärztlich geführter Longevity-Shop. Extrem strenge Qualitätskontrollen, patentierte Rohstoffe, öffentliche Zertifikate pro Charge.',
+    en:'German, physician-led longevity shop. Extremely strict quality controls, patented raw materials, publicly accessible per-batch certificates.',notes:[]},
+  'Nature Love / Natural Elements':{tier:1,
+    de:'Massenmarkt-Marken der Natsana GmbH mit Tier-1-Transparenz. Jede Charge per Laborbericht online abrufbar. Made in Germany.',
+    en:'Mass-market brands by Natsana GmbH with Tier-1 transparency. Every batch lab report available online. Made in Germany.',
+    notes:[{t:'info',de:'Seit 2025 vollständig mit Gloryfeel unter Bayer AG fusioniert. Qualitätsstandards weiterhin bestätigt.',en:'Fully merged with Gloryfeel under Bayer AG since 2025. Quality standards remain confirmed.'}]},
+  'NOVOS Labs':{tier:1,
+    de:'US-Wissenschaftsmarke für Longevity. Basiert auf fundierten Studien und einem wissenschaftlichen Beirat. Sehr transparente Produktkommunikation.',
+    en:'US science brand focused on longevity. Built on solid research and a scientific advisory board. Very transparent product communication.',notes:[]},
+  'Qidosha':{tier:1,
+    de:'Premium-Qualität durchgehend in Glasverpackung. Sehr reine Rohstoffe, konsequent plastikfrei. Einer der wenigen Anbieter mit konsequenter Glas-Strategie.',
+    en:'Premium quality with consistent glass packaging. Very pure raw materials, rigorously plastic-free. One of the few providers with a consistent glass-first strategy.',notes:[]},
 
-function toggleTier(header) {
-  const section = header.parentElement;
-  section.classList.toggle('collapsed');
+  'Best Body Nutrition':{tier:2,de:'Deutsche Traditionsmarke im Fitnesssegment mit langer Geschichte. Solide Qualität, eigene Produktion.',en:'Long-established German fitness brand. Solid quality with own production facilities.',notes:[]},
+  'Big Zone':{tier:2,de:'Berliner Urgestein der deutschen Bodybuilding-Szene ("No Bullshit"). Hohe Transparenz durch veröffentlichte Analysen, extrem hohe Dosierungen, Made in Germany.',en:'Berlin-based veteran of the German bodybuilding scene ("No Bullshit"). High transparency through published analyses, extremely high dosages, Made in Germany.',notes:[]},
+  'ESN':{tier:2,
+    de:'Marktführer Deutschland (The Quality Group), eigene Produktion in Elmshorn, Kölner Liste. Schwestermarke More Nutrition hat massive Rechtsprobleme.',
+    en:'German market leader (The Quality Group), own production in Elmshorn, Cologne List certified. Sister brand More Nutrition has serious legal issues.',
+    notes:[
+      {t:'warning',de:'⚠️ More Nutrition: ZDF Kritik (2023), Klage Verbraucherzentrale NRW (LG Hamburg, Niederlage 2024), foodwatch-Klage (LG Schleswig-Holstein, Niederlage Sept. 2024) wegen irreführender Gesundheitsversprechen.',en:'⚠️ More Nutrition: ZDF TV criticism (2023), lost lawsuits by Verbraucherzentrale NRW (Hamburg, 2024) and foodwatch (Schleswig-Holstein, Sept. 2024) for misleading health claims.'},
+      {t:'info',de:'CVC Capital Partners hält 81 % seit 2022 – gleicher Investor wie Sunday Natural (separate Gesellschaften).',en:'CVC Capital Partners holds 81% since 2022 – same investor as Sunday Natural (independent companies).'}
+    ]},
+  'Igennus':{tier:2,de:'Britische Wissenschaftsmarke. Exzellent bei Omega-3 (IFOS-zertifiziert) und bioverfügbaren Nährstoffen (VESIsorb-Technologie). GMP-Standard.',en:'British science brand. Excellent for Omega-3 (IFOS certified) and bioavailable nutrients (VESIsorb technology). GMP certified.',notes:[]},
+  'Kinetica':{tier:2,de:'Irischer Hersteller (Kerry Group), eigene Rohstoffe, starker Fokus auf Profisport.',en:'Irish manufacturer (Kerry Group), own raw materials, strong focus on professional sports nutrition.',notes:[]},
+  'Life Extension':{tier:2,de:'US-Premium-Marke, Forschungspionier mit jahrzehntelanger Geschichte. Eigene Forschungsabteilung, sehr hohes Produktportfolio.',en:'US premium brand, research pioneer with decades of history. Own research department, very extensive product portfolio.',notes:[]},
+  'MST Nutrition':{tier:2,de:'Deutsche Sportmarke (FI Fitness Inspiration GmbH). Nutzt Markenrohstoffe (Creapure, Carnipure). Made in Germany, seriös.',en:'German sports brand (FI Fitness Inspiration GmbH). Uses branded raw materials (Creapure, Carnipure). Made in Germany, reputable.',notes:[]},
+  'Natures Plus':{tier:2,de:'US-Traditionsmarke ("Source of Life", Natural Organics Inc.). Eigene Produktion, sehr hohe interne Standards.',en:'US heritage brand ("Source of Life", Natural Organics Inc.). Own production, very high internal standards.',notes:[]},
+  'NatuGena':{tier:2,de:'Deutsche Therapeuten-Marke aus Ingolstadt. Fokus auf orthomolekulare Medizin, verschrieben von Ärzten und Heilpraktikern.',en:'German practitioner brand from Ingolstadt. Focus on orthomolecular medicine, recommended by physicians and naturopaths.',notes:[]},
+  'Naturtreu':{tier:2,
+    de:'Zenkoh GmbH, Buxtehude. Seit 2024 auf der Kölner Liste®. GMP + ISO 9001 + HACCP, Made in Germany, 100 % vegan, PETA-zertifiziert.',
+    en:'Zenkoh GmbH, Buxtehude near Hamburg. On the Cologne List® since 2024. GMP + ISO 9001 + HACCP certified, Made in Germany, 100% vegan, PETA certified.',
+    notes:[{t:'success',de:'Kölner Liste® bestätigt (2024). Klimaneutral zertifiziert. Sehr durchdachte Komplexpräparate.',en:'Cologne List® confirmed (2024). Climate-neutral certified. Very well-formulated complex supplements.'}]},
+  'Neotes':{tier:2,de:'Longevity-Forschungsprojekt aus UK/DE. Fokus auf biologische Verjüngung und Anti-Aging.',en:'Longevity research brand from UK/Germany. Focus on biological rejuvenation and anti-aging compounds.',notes:[]},
+  'NOW Foods':{tier:2,de:'US-Riese mit extrem gutem internen Labor. GMP-zertifiziert, sehr breites und zuverlässiges Sortiment.',en:'US giant with an exceptionally strong in-house laboratory. GMP certified, very broad and reliable product range.',notes:[]},
+  'Nutri+':{tier:2,de:'Vegane Sportnahrung, transparent & gut. Führender veganer Anbieter im deutschsprachigen Markt.',en:'Vegan sports nutrition, transparent and high quality. Leading vegan provider in the German-speaking market.',notes:[]},
+  'Olimp':{tier:2,de:'Pharma-Konzern aus Polen. Produziert für viele andere Marken. Hochmoderne Anlagen, Top-Qualitätsstandards.',en:'Polish pharmaceutical group. Manufactures for many other brands. State-of-the-art facilities, top quality standards.',notes:[]},
+  'Optimum Nutrition':{tier:2,de:'Glanbia-Konzern. Weltweiter Standard für Whey-Proteinpulver. Jahrzehntelange Geschichte, sehr konstante Qualität.',en:'Glanbia group. The global benchmark for whey protein powder. Decades of history, very consistent quality.',notes:[]},
+  'Primal State':{tier:2,
+    de:'Primal State Performance GmbH, Berlin (gegr. 2017). Biohacking-Lifestyle-Marke. Sehr saubere Formulierungen, Made in Germany, vegan.',
+    en:'Primal State Performance GmbH, Berlin (founded 2017). Biohacking lifestyle brand. Very clean formulations, Made in Germany, vegan.',
+    notes:[{t:'info',de:'ℹ️ Neu in Tier 2 (vorher Tier 1). Keine öffentlichen per-Charge-COAs, keine konsequente Glasverpackung. Neue Geschäftsführung seit April 2025.',en:'ℹ️ Reclassified to Tier 2 (was Tier 1). No publicly accessible per-batch COAs, no consistent glass packaging. New management since April 2025.'}]},
+  'ProFuel':{tier:2,de:'Vegane Sportmarke, Made in Germany. Pionier für vegane Sportnahrung in Deutschland.',en:'Vegan sports brand, Made in Germany. Pioneer of vegan sports nutrition in Germany.',notes:[]},
+  'Raab Vitalfood':{tier:2,de:'Deutscher Bio-Pionier. Fokus auf pflanzliche Nährstoffdichte und Bio-Zertifizierung.',en:'German organic pioneer. Focus on plant-based nutrient density and organic certification.',notes:[]},
+  'Redfood Nature':{tier:2,de:'Solide deutsche Qualitätsmarke.',en:'Solid German quality brand.',notes:[]},
+  'Ruehl24':{tier:2,de:'Markus Rühl. Ehrliche Sportnahrung ohne unnötigen Schnickschnack, "No-Nonsense"-Ansatz.',en:'Markus Rühl brand. Honest sports nutrition without unnecessary frills – a genuine no-nonsense approach.',notes:[]},
+  'Sanuvit':{tier:2,de:'Österreichische Manufaktur. Apotheken-Qualität, Fokus auf Reinsubstanzen ohne unnötige Füllstoffe.',en:'Austrian manufacturer. Pharmacy-grade quality, focus on pure substances without unnecessary fillers.',notes:[]},
+  'Science in Sport':{tier:2,de:'UK-Marktführer für Ausdauer-Ernährung. Fast alles Informed Sport zertifiziert (Doping-frei). Eigene Forschung und Entwicklung.',en:'UK market leader for endurance nutrition. Almost all products Informed Sport certified (doping-free). Own R&D.',notes:[]},
+  'Solvisan':{tier:2,de:'Sehr reine Apotheken-Marke, gute Verträglichkeit. Fokus auf hochwertige Reinsubstanzen.',en:'Very pure pharmacy brand, excellent tolerability. Focus on high-quality pure substances.',notes:[]},
+  'Source of Nature':{tier:2,de:'P&H ApS, Dänemark. Spezialisiert auf Longevity-Wirkstoffe (NMN, Resveratrol). Hohe Qualität, aber keine öffentlichen per-Charge-Analysen.',en:'P&H ApS, Denmark. Specialised in longevity compounds (NMN, Resveratrol). High quality, but no publicly accessible per-batch analyses.',notes:[]},
+  'Sunday Natural':{tier:2,
+    de:'Riesiges Premium-Sortiment (1.000+ Produkte), sehr hochwertige Rohstoffe, True Clean Label Philosophie.',
+    en:'Huge premium range (1,000+ products), very high-quality raw materials, True Clean Label philosophy.',
+    notes:[
+      {t:'warning',de:'Seit April 2024 von CVC Capital Partners übernommen (~875 Mio. USD). Keine lückenlose Chargen-Transparenz. Service-Probleme nach Übernahme gemeldet.',en:'Acquired by CVC Capital Partners in April 2024 (~$875M). No complete batch transparency for end consumers. Service issues reported post-acquisition.'},
+      {t:'info',de:'Gleicher PE-Investor (CVC) wie The Quality Group (ESN/More Nutrition). Beide Unternehmen operieren vollständig unabhängig.',en:'Same PE investor (CVC) as The Quality Group (ESN/More Nutrition). Both companies operate fully independently.'}
+    ]},
+  'Swanson':{tier:2,de:'US-Traditionsmarke. Sehr günstig, aber sicher und zuverlässig. Breites Sortiment.',en:'US heritage brand. Very affordable but safe and reliable. Broad product range.',notes:[]},
+  'TNT':{tier:2,de:'True Nutrition Technology. Extrem evidenzbasiert (bekannt durch Marcus Michalak). Fokus auf wissenschaftlich belegte Dosierungen.',en:'True Nutrition Technology. Extremely evidence-based (known through Marcus Michalak). Focus on scientifically validated dosages.',notes:[]},
+  'Vetain':{tier:2,
+    de:'Vetain GmbH, Zorneding bei München (gegr. 2020). Bio-zertifiziert (DE-ÖKO-007), plastikfreie Verpackung (Sonoco GreenCan), Laboranalysen via Agrolab öffentlich, IFS-zertifiziert, Made in Germany.',
+    en:'Vetain GmbH, Zorneding near Munich (founded 2020). Organic certified (DE-ÖKO-007), plastic-free packaging (Sonoco GreenCan), Agrolab analyses publicly available on product pages, IFS-certified, Made in Germany.',
+    notes:[{t:'success',de:'200.000+ Kunden, ~20 Mio. € Umsatz. Starke Tier-1-Elemente bei Transparenz und Verpackung.',en:'200,000+ customers, ~€20M revenue. Strong Tier-1 elements for transparency and packaging.'}]},
+  'Vitaworld':{tier:2,de:'Vita-World GmbH, Taunusstein. Veröffentlicht echte Analyse-Zertifikate (PDFs) direkt bei den Produkten. Sehr transparent und preiswert.',en:'Vita-World GmbH, Taunusstein. Publishes actual analysis certificates (PDFs) directly on product pages. Very transparent and affordable.',notes:[]},
+  'Wehle Sports':{tier:2,de:'Solide deutsche Sportmarke mit gutem Preis-Leistungs-Verhältnis.',en:'Solid German sports brand with good value for money.',notes:[]},
+  'WFN':{tier:2,de:'Evidenzbasierte Sportnahrung mit Fokus auf wissenschaftlich belegte Dosierungen.',en:'Evidence-based sports nutrition with a focus on scientifically validated dosages.',notes:[]},
+
+  'AAVALABS':{tier:3,de:'Finnische Wurzeln, solide Amazon-Brand. Standard-Qualität.',en:'Finnish roots, solid Amazon brand. Standard quality.',notes:[]},
+  'Aldous Bio':{tier:3,de:'Spanische Marke mit Fokus auf plastikfreie Verpackung und Bio-Zertifizierung.',en:'Spanish brand focusing on plastic-free packaging and organic certification.',notes:[]},
+  'AlphaVitalis':{tier:3,de:'Solide Sport-Supplements im Standardsegment.',en:'Solid sports supplements in the standard segment.',notes:[]},
+  'Alps Nature':{tier:3,de:'Alps Pure GmbH, Österreich. Fokus auf Natürlichkeit. Solide Qualität, transparentes Impressum, aber keine öffentlichen Labordaten.',en:'Alps Pure GmbH, Austria. Focus on naturalness. Solid quality, transparent company details, but no public lab data.',notes:[]},
+  'Amazing Nature':{tier:3,de:'Solide deutsche Standardware im mittleren Preissegment.',en:'Solid German standard products in the mid price range.',notes:[]},
+  'APOrtha':{tier:3,de:'NordFit Sporternährung. Deutsche Marke seit ca. 2005. Gute Transparenz bei Inhaltsstoffen, nutzt Markenrohstoffe wie Kaneka. Keine öffentliche Labordatenbank.',en:'NordFit Sporternährung. German brand since approx. 2005. Good ingredient transparency, uses branded raw materials like Kaneka. No public lab database.',notes:[]},
+  'Bio Medical Pharma':{tier:3,de:'BMPharma GmbH. Deutsche Marke, Fokus auf "Science & Nature" (Beauty, Curcumin). Solider Standard.',en:'BMPharma GmbH. German brand focused on "Science & Nature" (beauty, curcumin). Solid standard.',notes:[]},
+  'BIO Protect B.V.':{tier:3,de:'Niederländische Marke, solide Basics-Produkte.',en:'Dutch brand, solid basic products.',notes:[]},
+  'Biotary':{tier:3,de:'Günstige Standardware. Sicher, aber ohne besondere Merkmale.',en:'Affordable standard products. Safe but without standout features.',notes:[]},
+  'Blattwerk':{tier:3,de:'Junge deutsche Marke (gegr. 2020). Breites Sortiment, in Apotheken gelistet (PZN). Solide und sicher.',en:'Young German brand (founded 2020). Wide range, listed in pharmacies (PZN). Solid and safe.',notes:[]},
+  'Boderra':{tier:3,de:'Spezialisiert u. a. auf Shilajit. Wirkt ehrlich und transparent.',en:'Specialises in products including Shilajit. Appears honest and transparent.',notes:[]},
+  'Bulk':{tier:3,de:'Ehemals Bulk Powders. Großer UK-Hersteller. Günstiger Massenmarkt mit eigener Produktion.',en:'Formerly Bulk Powders. Major UK manufacturer. Affordable mass market with own production.',notes:[]},
+  'CDF Sports & Health':{tier:3,de:'Kleiner deutscher Familienbetrieb. Persönlich geführt.',en:'Small German family business. Personally managed.',notes:[]},
+  'Cosphera':{tier:3,de:'Premium-Beauty-NEMs aus Österreich/DE. Fokus auf Haut- und Beauty-Supplements.',en:'Premium beauty supplements from Austria/Germany. Focus on skin and beauty supplements.',notes:[]},
+  'Double Wood':{tier:3,de:'US-Nischen-Spezialist für Nootropika. Veröffentlicht COAs (sehr gut), fiel aber in unabhängigen Tests teilweise durch Underdosing auf.',en:'US niche specialist for nootropics. Publishes COAs (very good), but independent tests have occasionally found underdosing.',notes:[{t:'warning',de:'Vereinzelt Underdosing in unabhängigen Tests festgestellt. COAs werden veröffentlicht, Prüfung empfohlen.',en:'Occasional underdosing found in independent tests. COAs are published but verification is recommended.'}]},
+  'DPG Delnava Pharma':{tier:3,de:'Kerpen. Deutscher Lohnhersteller mit Apotheken-Produkten. Sicher und seriös.',en:'Kerpen, Germany. German contract manufacturer with pharmacy products (incl. electrolytes). Safe and reputable.',notes:[]},
+  'Effective Nature':{tier:3,de:'Hausmarke der Fair Trade Handels AG. Über "Zentrum der Gesundheit" vermarktet. Gute Standard-Qualität.',en:'House brand of Fair Trade Handels AG. Marketed via "Zentrum der Gesundheit". Good standard quality.',notes:[]},
+  'Elixirvit':{tier:3,de:'Fokus auf patentierte Rohstoffe (NovaSOL Curcumin). Gute Inhaltsstoffe, Nischen-Brand.',en:'Focus on patented raw materials (NovaSOL Curcumin). Good ingredients, niche brand.',notes:[]},
+  'EWL Naturprodukte':{tier:3,de:'Teil der VitaminVersand24-Gruppe. Schwestermarken: GEN, Vit4ever. Solide Standardware.',en:'Part of the VitaminVersand24 group. Sister brands: GEN, Vit4ever. Solid standard products.',notes:[]},
+  'Ezyleaf':{tier:3,de:'BW Ecommerce Ltd. UK-Handelsmarke, verbunden mit Mega Nutrition. Solide Standard-Qualität ("Made in UK").',en:'BW Ecommerce Ltd. UK trade brand, linked to Mega Nutrition. Solid standard quality ("Made in UK").',notes:[]},
+  'German Elite Nutrition':{tier:3,de:'VitaminVersand24. Schwestermarken: Vit4ever, EWL. Preis-Leistungs-Sieger. Nutzt hochwertige Markenrohstoffe (K2Vital, Magnafolat Pro).',en:'VitaminVersand24. Sister brands: Vit4ever, EWL. Best value for ambitious athletes. Uses premium branded raw materials (K2Vital, Magnafolat Pro).',notes:[]},
+  'Gloryfeel':{tier:3,
+    de:'D2C-Marke aus Hamburg, seit Bayer-Übernahme 2022 Teil des Pharmakonzerns. Schwestermarken: Nature Love, Natural Elements, Feel Natural. Eigene Produktion, gute Qualität.',
+    en:'D2C brand from Hamburg, part of Bayer pharmaceutical group since 2022. Sister brands: Nature Love, Natural Elements, Feel Natural. Own production, good quality.',
+    notes:[{t:'info',de:'Seit 2025 vollständig mit Natsana GmbH unter Bayer AG fusioniert. Keine öffentlichen per-Charge-COAs → Tier 3.',en:'Fully merged with Natsana GmbH under Bayer AG since 2025. No public per-batch COAs → remains Tier 3.'}]},
+  'Green Naturals':{tier:3,de:'Gute deutsche Qualität. Fokus auf natürliche Inhaltsstoffe.',en:'Good German quality. Focus on natural ingredients.',notes:[]},
+  'Gym-Nutrition':{tier:3,de:'Hamburg. Made in Germany. Solide Sportnahrung.',en:'Hamburg. Made in Germany. Solid sports nutrition.',notes:[]},
+  'Hepatica':{tier:3,de:'Polnische Manufaktur. Spezialisiert auf Pflanzenextrakte. Clean Label, keine unnötigen Zusätze.',en:'Polish manufacturer. Specialised in plant extracts. Clean label, no unnecessary additives.',notes:[]},
+  'Her One':{tier:3,de:'Berliner Lifestyle-Marke. Bio-zertifiziert, Fokus auf Darm- und Frauengesundheit.',en:'Berlin lifestyle brand. Organic certified, focus on gut health and women\'s health.',notes:[]},
+  'Hivital':{tier:3,de:'Spanische Marke. Preis-Leistungs-Sieger im europäischen Markt.',en:'Spanish brand. Outstanding value for money in the European market.',notes:[]},
+  'MGX':{tier:3,de:'Magnesium Experten (SKYVE Atlas GmbH). Deutsche Nischenmarke für verschiedene Magnesium-Verbindungen.',en:'Magnesium Experts (SKYVE Atlas GmbH). German niche brand for various magnesium compounds.',notes:[]},
+  'Naturecan':{tier:3,de:'UK-Marke (gegr. von Ex-Myprotein CEO). Exzellent bei CBD-Produkten, solide bei normalen Supplements.',en:'UK brand (founded by ex-Myprotein CEO). Excellent for CBD products, solid for standard supplements.',notes:[]},
+  'Nutravita':{tier:3,de:'UK-Marke (Karo Healthcare, Pharma). Sicherer Standard, breites Sortiment.',en:'UK brand (Karo Healthcare, pharma background). Safe standard, wide product range.',notes:[]},
+  'PharmaVital':{tier:3,de:'PharmaVital GmbH, Bonn. Etablierte Apotheken-Marke (seit 2009). Made in Germany, sicher und geprüft.',en:'PharmaVital GmbH, Bonn. Established pharmacy brand (since 2009). Made in Germany, safe and tested.',notes:[]},
+  'PH PROWISE Healthcare':{tier:3,de:'Prowise Healthcare, UK. Britische Marke mit echten Markenrohstoffen (Vitashine®, VitaMK7®, AB-Fortis®). Made in UK. Keine öffentlichen COAs.',en:'Prowise Healthcare, UK. British brand using genuine branded raw materials (Vitashine®, VitaMK7®, AB-Fortis®, Urophenol™). Made in UK. No public COAs.',notes:[]},
+  'Plantomol':{tier:3,de:'Spezial-Supplements für verschiedene Gesundheitsbereiche.',en:'Specialist supplements for various health areas.',notes:[]},
+  'Purefitness':{tier:3,de:'Solide Amazon-Marke (peaq Ventures).',en:'Solid Amazon brand (peaq Ventures).',notes:[]},
+  'Sanotact':{tier:3,de:'Drogerie-Riese aus Münster. Breites Sortiment, solider Standard.',en:'Drugstore giant from Münster. Wide range, solid standard.',notes:[]},
+  'Scheunengut':{tier:3,de:'Marketing-Brand, aber Inhalt okay. Standard-Qualität.',en:'Marketing-heavy brand, but content is acceptable. Standard quality.',notes:[]},
+  'Syglabs':{tier:3,de:'Lohnhersteller mit Eigenmarke. Günstige Preise.',en:'Contract manufacturer with own brand. Affordable prices.',notes:[]},
+  'Vihado':{tier:3,de:'Etablierte Apotheken-Marke (Vihado GmbH & Co. KG, Kehl). Reguläre Laboranalysen und Herkunftsnachweise.',en:'Established pharmacy brand (Vihado GmbH & Co. KG, Kehl). Regular laboratory analyses and certificates of origin.',notes:[]},
+  'Vit4ever':{tier:3,de:'VitaminVersand24. Schwestermarken: GEN, EWL. Der Preis-Leistungs-Klassiker für Fitness-Lifestyle-Kunden.',en:'VitaminVersand24. Sister brands: GEN, EWL. The classic value-for-money choice for fitness lifestyle customers.',notes:[]},
+  'Vita2You':{tier:3,de:'Günstige Standardware. Sicher, aber ohne besondere Merkmale.',en:'Affordable standard products. Safe but without standout features.',notes:[]},
+  'Vitality Nutritionals':{tier:3,de:'Eigenmarke von VitaminExpress (USA/Niederlande). Großer Player im Markt, solide Qualität.',en:'House brand of VitaminExpress (USA/Netherlands). Major market player, solid quality.',notes:[]},
+  'Vitamaze':{tier:3,de:'Heidelberg. Guter Standard, breites Sortiment.',en:'Heidelberg. Good standard, wide product range.',notes:[]},
+  'Vitavea':{tier:3,de:'Frankreich, großer Anbieter. Solide und sicher.',en:'France, major provider. Solid and safe.',notes:[]},
+
+  '7 Elements':{tier:4,de:'Generische Amazon-Marke ohne erkennbare Hersteller-Transparenz.',en:'Generic Amazon brand with no discernible manufacturer transparency.',notes:[]},
+  'Bandini Pharma':{tier:4,de:'Italienischer Massenmarkt-Seller. Kaum Hintergrundinformationen verfügbar.',en:'Italian mass-market seller. Barely any background information available.',notes:[]},
+  'BIODYNAMX':{tier:4,de:'BioDynamix, US-Marketing-Marke ("Joint Genesis"). Nutzt Markenrohstoff Mobilee®, aber extrem aggressives "VSL"-Marketing, keine öffentlichen Analysen.',en:'BioDynamix, US marketing brand ("Joint Genesis"). Uses branded ingredient Mobilee®, but extremely aggressive "VSL" marketing with no public analyses.',notes:[]},
+  'Bodylab24':{tier:4,de:'Shop-Eigenmarke, eher günstig orientiert.',en:'Shop own-label brand, budget-oriented.',notes:[]},
+  'Cestfilo':{tier:4,de:'Trademark: Li Xiaobing, China. Klassische Amazon-Export-Marke für hochdosierte Trendstoffe (NMN, Glutathion). Keine Transparenz.',en:'Trademark: Li Xiaobing, China. Classic Amazon export brand for high-dose trend compounds (NMN, Glutathione). No production transparency.',notes:[]},
+  'Cheroline':{tier:4,de:'Fokus auf trendy Gummies (Shilajit, Urolithin A, Probiotika). Keine öffentlichen Chargen-Analysen.',en:'Focus on trendy gummies (Shilajit, Urolithin A, Probiotics). No public batch analyses.',notes:[{t:'warning',de:'Im Januar 2025 durch Lebensmittelklarheit.de (Verbraucherzentrale) wegen "fragwürdiger Gummibärchen" kritisiert.',en:'Criticised in January 2025 by Lebensmittelklarheit.de (German consumer watchdog) for "dubious gummies" and a "wild potpourri of health claims".'}]},
+  'Daily Nature':{tier:4,de:'Unauffällige Handelsmarke ohne erkennbare Transparenz.',en:'Unremarkable trade brand with no discernible transparency.',notes:[]},
+  'Evolve Nutrition':{tier:4,de:'Wenig Informationen verfügbar. Keine seriöse Hersteller-Dokumentation findbar.',en:'Little information available. No credible manufacturer documentation found.',notes:[]},
+  'EXVital':{tier:4,de:'Marktplatz-Händler ohne klaren Hersteller-Hintergrund.',en:'Marketplace seller with no clear manufacturer background.',notes:[]},
+  'Gozitepe':{tier:4,de:'Trademark: Xiuzheng Ltd, UK/China. Private Label Marke. Kein seriöser Background findbar.',en:'Trademark: Xiuzheng Ltd, UK/China. Private label brand. No credible background found.',notes:[]},
+  'GreenLab':{tier:4,de:'Nicht zu verwechseln mit Green Naturals (Tier 3). Handelsmarke ohne erkennbare Transparenz.',en:'Not to be confused with Green Naturals (Tier 3). Trade brand with no discernible transparency.',notes:[{t:'warning',de:'Achtung: Nicht verwechseln mit Green Naturals (Tier 3)!',en:'Warning: Do not confuse with Green Naturals (Tier 3)!'}]},
+  'Horbäach':{tier:4,de:'Marke von Piping Rock (US). Produkte sind sicher, aber null Transparenz für EU-Kunden.',en:'Brand by Piping Rock (US). Products are safe, but zero transparency for EU customers.',notes:[]},
+  'J.Armor':{tier:4,de:'Italienische Marke mit "Pharma"-Image. Standard-Importware für den Massenmarkt, keine öffentlichen Laboranalysen.',en:'Italian brand with a "pharma" image. Standard import products for the mass market, no public laboratory analyses.',notes:[]},
+  'Kinoko Life':{tier:4,de:'Marketplace-Brand, nutzt Namensähnlichkeit zu US-Produkten.',en:'Marketplace brand leveraging name similarity to US products.',notes:[]},
+  'Lumarejebo':{tier:4,de:'Reine Fantasie-Marke ohne belegbare Historie oder Hersteller-Dokumentation.',en:'Pure invented brand with no verifiable history or manufacturer documentation.',notes:[]},
+  'Nature Well':{tier:4,de:'US-Importware ohne substantielle Transparenz für EU-Kunden.',en:'US import products with no substantial transparency for EU customers.',notes:[]},
+  'NaturElan':{tier:4,de:'Wahrscheinliche chinesische Beteiligung. Wenig Transparenz.',en:'Likely Chinese involvement. Very little transparency.',notes:[]},
+  'Nutri Brain':{tier:4,de:'Spanische E-Commerce-Marke (Nanoboost). Standard-Import.',en:'Spanish e-commerce brand (Nanoboost). Standard import product.',notes:[]},
+  'NUTRICEL':{tier:4,de:'Spanische FBA-Marke (Foodelis). Wenig Hintergrundinfos.',en:'Spanish FBA brand (Foodelis). Very little background information.',notes:[]},
+  'Nutrioto':{tier:4,de:'Klein und wenig Informationen verfügbar.',en:'Small brand with very little information available.',notes:[]},
+  'Plantiq & Partner':{tier:4,de:'Reiner Reseller-Betrieb ohne eigene Hersteller-Infrastruktur.',en:'Pure reseller operation with no own manufacturer infrastructure.',notes:[]},
+  'Prime Elements':{tier:4,de:'Prime Elements GmbH, Berlin (2025). Primär im Energierohstoffhandel tätig – fachfremder Hintergrund. Keine Laboranalysen.',en:'Prime Elements GmbH, Berlin (2025). Company primarily in energy commodities trading – unrelated background. No laboratory analyses.',notes:[{t:'warning',de:'Wirkt wie reine "Me-Too"-Brand ohne eigene Supplement-Infrastruktur.',en:'Appears to be a pure "me-too" brand (name similarity to Natural Elements / 7 Elements) with no own supplement infrastructure.'}]},
+  'Raibu':{tier:4,de:'Import-Verdacht trotz "German"-Marketing.',en:'Suspected import brand despite "German" marketing.',notes:[]},
+  'Restaxil':{tier:4,de:'PharmaSGP. Aggressives Marketing für Apothekenprodukte. Nutzen oft umstritten.',en:'PharmaSGP. Aggressive marketing for pharmacy products. Effectiveness often disputed (criticism by "Gute Pillen Schlechte Pillen" watchdog).',notes:[]},
+  'Solavica':{tier:4,de:'Reine Amazon-Hülle ohne erkennbare Hersteller-Infrastruktur.',en:'Pure Amazon shell brand with no discernible manufacturer infrastructure.',notes:[]},
+  'WeightWorld':{tier:4,de:'Comfort Click. UK-Aggregator-Marke mit Fokus auf Masse und niedrige Preise.',en:'Comfort Click. UK aggregator brand focused on volume and low prices.',notes:[]},
+  'Zenement':{tier:4,de:'Spanischer Preisbrecher. Produkte sind sicher, aber reine Massenware ohne Qualitätsdifferenzierung.',en:'Spanish budget brand. Products are safe but pure mass-market with no quality differentiation.',notes:[]},
+
+  'Amando Perez':{tier:5,de:'Handelsmarke von Vitabay (Niederlande). Gleiche Intransparenz wie Muttermarke Vitabay.',en:'Trade brand of Vitabay (Netherlands). Same lack of transparency as parent brand Vitabay.',notes:[]},
+  'Best Immune':{tier:5,de:'UK-Marke mit internen Querelen. Vorsicht geboten.',en:'UK brand with internal disputes. Caution advised.',notes:[{t:'warning',de:'Ex-Direktoren haben öffentlich "Scam"-Vorwürfe erhoben.',en:'Former directors have publicly raised "scam" allegations.'}]},
+  'Bloom Naturals Beauty':{tier:5,de:'Zu viel Lifestyle-Marketing, zu wenig substanzieller Inhalt. Keine nachprüfbare Qualitäts-Dokumentation.',en:'Too much lifestyle marketing, too little substantive content. No verifiable quality documentation.',notes:[]},
+  'Element One':{tier:5,de:'Zu generisch. Keine erkennbare Hersteller-Infrastruktur oder Transparenz.',en:'Too generic. No discernible manufacturer infrastructure or transparency.',notes:[]},
+  'Greenlab Nutrition':{tier:5,de:'Vorsicht wegen Namensgleichheit mit GreenLab (Tier 4). Keine seriöse Dokumentation.',en:'Caution due to name similarity with GreenLab (Tier 4). No credible documentation.',notes:[{t:'warning',de:'Nicht zu verwechseln mit GreenLab (Tier 4) oder Green Naturals (Tier 3).',en:'Not to be confused with GreenLab (Tier 4) or Green Naturals (Tier 3).'}]},
+  'HealthyWorld':{tier:5,de:'Slowenischer Import mit minimaler Transparenz für Endkunden.',en:'Slovenian import brand with minimal transparency for end consumers.',notes:[]},
+  'JKR-Spices':{tier:5,de:'Eher Gewürzhändler ohne tiefe Supplement-Expertise oder entsprechende Qualitätszertifizierungen.',en:'Primarily a spice trader without deep supplement expertise or corresponding quality certifications.',notes:[]},
+  'Nature Diet':{tier:5,de:'Unklare Herkunft und Qualitätsstandards. Keine nachprüfbare Dokumentation.',en:'Unclear origin and quality standards. No verifiable documentation.',notes:[]},
+  'Nature Spring':{tier:5,de:'Dropshipping-Verdacht. Keine erkennbare eigene Hersteller-Infrastruktur.',en:'Suspected dropshipping operation. No discernible own manufacturer infrastructure.',notes:[]},
+  'Naturkur':{tier:5,de:'Unbekannter Hintergrund. Keine transparente Unternehmenskommunikation.',en:'Unknown background. No transparent company communication.',notes:[]},
+  'Regio':{tier:5,de:'Irreführendes Regionalitäts-Marketing ohne echten lokalen Produktionshintergrund.',en:'Misleading regionality marketing with no genuine local production background.',notes:[]},
+  'Stivits':{tier:5,de:'Hyperpharm OÜ. Estnische E-Commerce-Marke mit Lager in Lettland. Wenig Transparenz, klassischer Online-Reseller.',en:'Hyperpharm OÜ. Estonian e-commerce brand with warehouse in Latvia. Little transparency, classic online reseller.',notes:[]},
+  'Vitabay':{tier:5,de:'Riesiges Sortiment, Import-Struktur (NL), wenig Transparenz. Muttermarke von Amando Perez.',en:'Huge range, import structure (Netherlands), little transparency. Parent brand of Amando Perez.',notes:[]},
+};
+
+const TC = {1:'var(--t1-color)',2:'var(--t2-color)',3:'var(--t3-color)',4:'var(--t4-color)',5:'var(--t5-color)'};
+const TB = {1:'var(--t1-bg)',2:'var(--t2-bg)',3:'var(--t3-bg)',4:'var(--t4-bg)',5:'var(--t5-bg)'};
+const TBR = {1:'var(--t1-border)',2:'var(--t2-border)',3:'var(--t3-border)',4:'var(--t4-border)',5:'var(--t5-border)'};
+const TE = {1:'🥇',2:'🥈',3:'🥉',4:'📉',5:'⚠️'};
+const TN = {1:'Tier 1 – Elite',2:'Tier 2 – High Reliability',3:'Tier 3 – Solid Standard',4:'Tier 4 – Mass Market / Opacity',5:'Tier 5 – Red Flag'};
+
+let lang = 'de';
+function s(k){ return STRINGS[lang][k] || STRINGS.de[k] || k; }
+
+function setLang(l){
+  lang = l;
+  document.documentElement.lang = l;
+  document.getElementById('btn-de').classList.toggle('active', l==='de');
+  document.getElementById('btn-en').classList.toggle('active', l==='en');
+  applyI18n();
+  clearSearch();
 }
 
-function showDetail(name, tier) {
-  const data = brandData[name];
-  if (!data) return;
-  const t = parseInt(tier);
-  const panel = document.getElementById('detailPanel');
-  const inner = document.getElementById('detailInner');
-  const overlay = document.getElementById('overlay');
+function applyI18n(){
+  document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = s(el.dataset.i18n); });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => { el.innerHTML = s(el.dataset.i18nHtml); });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => { el.placeholder = s(el.dataset.i18nPlaceholder); });
+}
 
-  let notesHTML = '';
-  if (data.notes && data.notes.length) {
-    notesHTML = data.notes.map(n => `<div class="detail-note note-${n.type}">${n.text}</div>`).join('');
-  }
-
-  inner.innerHTML = `
-    <button class="detail-close" id="detailClose" onclick="closeDetail()">✕</button>
-    <div class="detail-tier-tag" style="background:${tierBgColors[t]};border:1px solid ${tierBorderColors[t]};color:${tierColors[t]}">
-      ${tierEmojis[t]} ${tierNames[t]}
-    </div>
+function showDetail(name){
+  const d = B[name]; if(!d) return;
+  const t = d.tier;
+  const desc = lang==='en' ? d.en : d.de;
+  const notes = (d.notes||[]).map(n=>{
+    const txt = lang==='en' ? n.en : n.de;
+    return `<div class="detail-note note-${n.t}">${txt}</div>`;
+  }).join('');
+  document.getElementById('detailInner').innerHTML = `
+    <button class="detail-close" onclick="closeDetail()">✕</button>
+    <div class="detail-tier-tag" style="background:${TB[t]};border:1px solid ${TBR[t]};color:${TC[t]}">${TE[t]} ${TN[t]}</div>
     <div class="detail-title">${name}</div>
     <div class="detail-divider"></div>
-    <div class="detail-body">${data.desc}</div>
-    ${notesHTML}
-  `;
-
-  panel.classList.add('open');
-  overlay.classList.add('open');
-  document.body.style.overflow = 'hidden';
+    <div class="detail-body">${desc}</div>
+    ${notes}`;
+  document.getElementById('overlay').classList.add('open');
+  document.body.style.overflow='hidden';
 }
 
-function closeDetail() {
-  document.getElementById('detailPanel').classList.remove('open');
+function closeDetail(){
   document.getElementById('overlay').classList.remove('open');
-  document.body.style.overflow = '';
+  document.body.style.overflow='';
 }
 
-document.getElementById('overlay').addEventListener('click', function(e) {
-  if (e.target === this) closeDetail();
-});
+document.getElementById('overlay').addEventListener('click', e=>{ if(e.target===document.getElementById('overlay')) closeDetail(); });
 
-// ── Filter by tier ──
-document.querySelectorAll('.filter-btn').forEach(btn => {
-  btn.addEventListener('click', function() {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+  btn.addEventListener('click',function(){
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
     this.classList.add('active');
-    const tier = this.dataset.tier;
-    document.querySelectorAll('.tier-section').forEach(sec => {
-      if (tier === 'all' || sec.dataset.tier === tier) {
-        sec.classList.remove('hidden');
-      } else {
-        sec.classList.add('hidden');
-      }
-    });
+    const tier=this.dataset.tier;
+    document.querySelectorAll('.tier-section').forEach(sec=>sec.classList.toggle('hidden', tier!=='all'&&sec.dataset.tier!==tier));
   });
 });
 
-function clearSearch() {
-  const input = document.getElementById('searchInput');
-  input.value = '';
-  input.dispatchEvent(new Event('input'));
-  input.focus();
+function clearSearch(){
+  const inp=document.getElementById('searchInput');
+  inp.value='';
+  inp.dispatchEvent(new Event('input'));
 }
 
-// ── Search ──
-const searchInput = document.getElementById('searchInput');
-const searchResults = document.getElementById('searchResults');
-const tierContainer = document.getElementById('tierContainer');
+function toggleTier(h){ h.parentElement.classList.toggle('collapsed'); }
 
-searchInput.addEventListener('input', function() {
-  const q = this.value.trim().toLowerCase();
-
-  if (!q) {
-    // Reset: hide results panel, show tier sections
-    searchResults.style.display = 'none';
-    tierContainer.style.display = '';
-    searchResults.innerHTML = '';
-    return;
-  }
-
-  // Gather all matching brands
-  const matches = [];
-  document.querySelectorAll('.brand-card').forEach(card => {
-    const nameEl = card.querySelector('.brand-name');
-    const name = nameEl.textContent;
-    if (name.toLowerCase().includes(q)) {
-      const tier = parseInt(card.closest('.tier-section').dataset.tier);
-      const warning = card.querySelector('.brand-warning')?.textContent || '';
-      matches.push({ name, tier, warning });
-    }
+document.getElementById('searchInput').addEventListener('input',function(){
+  const q=this.value.trim().toLowerCase();
+  const sr=document.getElementById('searchResults');
+  const tc=document.getElementById('tierContainer');
+  if(!q){ sr.style.display='none'; sr.innerHTML=''; tc.style.display=''; return; }
+  const matches=[];
+  document.querySelectorAll('.brand-card').forEach(card=>{
+    const nm=card.querySelector('.brand-name').textContent;
+    if(nm.toLowerCase().includes(q)) matches.push({name:nm,tier:parseInt(card.closest('.tier-section').dataset.tier)});
   });
-
-  // Hide tier sections, show results panel
-  tierContainer.style.display = 'none';
-  searchResults.style.display = 'block';
-
-  if (matches.length === 0) {
-    searchResults.innerHTML = `<div class="search-empty">Keine Marke gefunden für „${this.value}"</div>`;
-    return;
-  }
-
-  // Highlight matching text
-  function highlight(text, q) {
-    const idx = text.toLowerCase().indexOf(q);
-    if (idx === -1) return text;
-    return text.slice(0, idx) + `<mark>${text.slice(idx, idx + q.length)}</mark>` + text.slice(idx + q.length);
-  }
-
-  const html = matches.map(m => `
-    <div class="search-result-card tier-${m.tier}" onclick="showDetail('${m.name.replace(/'/g,"\\'")}','${m.tier}')">
-      <div class="search-result-tier" style="color:${tierColors[m.tier]}">${tierEmojis[m.tier]} Tier ${m.tier}</div>
-      <div class="search-result-name">${highlight(m.name, q)}</div>
-      ${m.warning ? `<div class="brand-warning">${m.warning}</div>` : ''}
-    </div>
-  `).join('');
-
-  searchResults.innerHTML = `
-    <div class="search-result-header">${matches.length} Treffer für „${this.value}"</div>
-    <div class="search-result-grid">${html}</div>
-  `;
+  tc.style.display='none'; sr.style.display='block';
+  function hl(txt,q){ const i=txt.toLowerCase().indexOf(q); if(i<0)return txt; return txt.slice(0,i)+`<mark>${txt.slice(i,i+q.length)}</mark>`+txt.slice(i+q.length); }
+  if(!matches.length){ sr.innerHTML=`<div class="search-empty">${s('resultsNone')(this.value)}</div>`; return; }
+  const hdr=s('resultsFound')(matches.length,this.value);
+  const cards=matches.map(m=>`<div class="search-result-card tier-${m.tier}" onclick="showDetail('${m.name.replace(/'/g,"\\'")}')"><div class="search-result-tier" style="color:${TC[m.tier]}">${TE[m.tier]} Tier ${m.tier}</div><div class="search-result-name">${hl(m.name,q)}</div></div>`).join('');
+  sr.innerHTML=`<div class="search-result-header">${hdr}</div><div class="search-result-grid">${cards}</div>`;
 });
+
+applyI18n();
 </script>
 </body>
 </html>
