@@ -225,7 +225,7 @@
         <div class="tier-name">High Reliability</div>
         <div class="tier-desc" data-i18n="t2desc"></div>
       </div>
-      <div class="tier-count">31 <span data-i18n="brandsWord"></span></div>
+      <div class="tier-count">32 <span data-i18n="brandsWord"></span></div>
       <div class="tier-chevron">›</div>
     </div>
     <div class="brand-grid">
@@ -251,6 +251,7 @@
       <div class="brand-card" onclick="showDetail('Ruehl24')"><div class="brand-dot"></div><div><div class="brand-name">Ruehl24</div></div></div>
       <div class="brand-card" onclick="showDetail('Sanuvit')"><div class="brand-dot"></div><div><div class="brand-name">Sanuvit</div></div></div>
       <div class="brand-card" onclick="showDetail('Science in Sport')"><div class="brand-dot"></div><div><div class="brand-name">Science in Sport (SiS)</div></div></div>
+      <div class="brand-card" onclick="showDetail('Squeezy')"><div class="brand-dot"></div><div><div class="brand-name">Squeezy</div></div></div>
       <div class="brand-card" onclick="showDetail('Solvisan')"><div class="brand-dot"></div><div><div class="brand-name">Solvisan</div></div></div>
       <div class="brand-card" onclick="showDetail('Source of Nature')"><div class="brand-dot"></div><div><div class="brand-name">Source of Nature</div></div></div>
       <div class="brand-card" onclick="showDetail('Sunday Natural')"><div class="brand-dot"></div><div><div class="brand-name">Sunday Natural</div></div></div>
@@ -271,7 +272,7 @@
         <div class="tier-name">Solid Standard</div>
         <div class="tier-desc" data-i18n="t3desc"></div>
       </div>
-      <div class="tier-count">44 <span data-i18n="brandsWord"></span></div>
+      <div class="tier-count">45 <span data-i18n="brandsWord"></span></div>
       <div class="tier-chevron">›</div>
     </div>
     <div class="brand-grid">
@@ -301,6 +302,7 @@
       <div class="brand-card" onclick="showDetail('Gym-Nutrition')"><div class="brand-dot"></div><div><div class="brand-name">Gym-Nutrition</div></div></div>
       <div class="brand-card" onclick="showDetail('Hepatica')"><div class="brand-dot"></div><div><div class="brand-name">Hepatica</div></div></div>
       <div class="brand-card" onclick="showDetail('Her One')"><div class="brand-dot"></div><div><div class="brand-name">Her One</div></div></div>
+      <div class="brand-card" onclick="showDetail('Histameany')"><div class="brand-dot"></div><div><div class="brand-name">Histameany</div></div></div>
       <div class="brand-card" onclick="showDetail('Hivital')"><div class="brand-dot"></div><div><div class="brand-name">Hivital</div></div></div>
       <div class="brand-card" onclick="showDetail('MGX')"><div class="brand-dot"></div><div><div class="brand-name">MGX</div></div></div>
       <div class="brand-card" onclick="showDetail('Naturecan')"><div class="brand-dot"></div><div><div class="brand-name">Naturecan</div></div></div>
@@ -531,6 +533,10 @@ const B = {
       {t:'warning',de:'Seit April 2024 von CVC Capital Partners übernommen (~875 Mio. USD). Keine lückenlose Chargen-Transparenz. Service-Probleme nach Übernahme gemeldet.',en:'Acquired by CVC Capital Partners in April 2024 (~$875M). No complete batch transparency for end consumers. Service issues reported post-acquisition.'},
       {t:'info',de:'Gleicher PE-Investor (CVC) wie The Quality Group (ESN/More Nutrition). Beide Unternehmen operieren vollständig unabhängig.',en:'Same PE investor (CVC) as The Quality Group (ESN/More Nutrition). Both companies operate fully independently.'}
     ]},
+  'Squeezy':{tier:2,
+    de:'Squeezy Sports Nutrition GmbH, Braunschweig. Erfinder des Energy Gels (1987), seit 2009 ausschließlich Made in Germany. Explizite Philosophie gegen künstliche Süßstoffe: "Wir halten künstliche Süßstoffe in der Sporternährung für gesundheitsschädlich." Über 35 Jahre Geschichte im Endausdauersport. Nachhaltigkeit ("Squeezy goes green" seit 2022). Keine öffentlichen per-Charge-COAs.',
+    en:'Squeezy Sports Nutrition GmbH, Braunschweig. Inventor of the energy gel (1987), manufactured exclusively in Germany since 2009. Explicit philosophy against artificial sweeteners: "We consider artificial sweeteners in sports nutrition to be harmful to health." Over 35 years of history in endurance sports. Sustainability initiative ("Squeezy goes green" since 2022). No public per-batch COAs.',
+    notes:[{t:'success',de:'Elektrolyt-Produkte 100% süßstofffrei: "Endurance Electrolytes" Brausetabletten (Natrium + Kalium, kein Süßstoff, bio-basiertes Röhrchen) und "Salt Tabs" (geschmacklose Dragée-Tabletten ohne Süßstoffe). Ideal für Sportler, die saubere Elektrolyte ohne Sucralose suchen.',en:'Electrolyte products 100% sweetener-free: "Endurance Electrolytes" effervescent tabs (sodium + potassium, no sweetener, bio-based tube) and "Salt Tabs" (tasteless coated tablets, no sweetener). Ideal for athletes seeking clean electrolytes without sucralose.'}]},
   'Swanson':{tier:2,de:'US-Traditionsmarke. Sehr günstig, aber sicher und zuverlässig. Breites Sortiment.',en:'US heritage brand. Very affordable but safe and reliable. Broad product range.',notes:[]},
   'TNT':{tier:2,de:'True Nutrition Technology. Extrem evidenzbasiert (bekannt durch Marcus Michalak). Fokus auf wissenschaftlich belegte Dosierungen.',en:'True Nutrition Technology. Extremely evidence-based (known through Marcus Michalak). Focus on scientifically validated dosages.',notes:[]},
   'Vetain':{tier:2,
@@ -570,6 +576,10 @@ const B = {
   'Gym-Nutrition':{tier:3,de:'Hamburg. Made in Germany. Solide Sportnahrung.',en:'Hamburg. Made in Germany. Solid sports nutrition.',notes:[]},
   'Hepatica':{tier:3,de:'Polnische Manufaktur. Spezialisiert auf Pflanzenextrakte. Clean Label, keine unnötigen Zusätze.',en:'Polish manufacturer. Specialised in plant extracts. Clean label, no unnecessary additives.',notes:[]},
   'Her One':{tier:3,de:'Berliner Lifestyle-Marke. Bio-zertifiziert, Fokus auf Darm- und Frauengesundheit.',en:'Berlin lifestyle brand. Organic certified, focus on gut health and women\'s health.',notes:[]},
+  'Histameany':{tier:3,
+    de:'Kleine deutsche Nischenmarke, entwickelt für Menschen mit Histaminintoleranz und MCAS. Elektrolytpulver (Calcium, Kalium, Magnesium, Natrium) absolut ohne Zusatzstoffe, Aromen und Süßstoffe – nur organisch gebundene Mineralien. Ausgezeichnete Verträglichkeit auch bei sehr empfindlichem Darm. Kein GMP-Nachweis, kleiner Betrieb.',
+    en:'Small German niche brand developed for people with histamine intolerance and MCAS. Electrolyte powder (calcium, potassium, magnesium, sodium) completely free from additives, flavourings and sweeteners – only organically bound minerals. Excellent tolerability even for highly sensitive digestion. No GMP certification, small operation.',
+    notes:[{t:'info',de:'Sehr enge Zielgruppe (Histaminintoleranz, MCAS, POTS). Auch für alle geeignet, die Sucralose/Aromen strikt meiden wollen. Löslichkeit des Pulvers gelegentlich als mäßig bewertet – Tipp: in leicht warmem Wasser oder mit Fruchtsaft lösen.',en:'Very niche target group (histamine intolerance, MCAS, POTS). Also suitable for anyone strictly avoiding sucralose or artificial flavours. Powder solubility occasionally rated as moderate – tip: dissolve in slightly warm water or add a splash of fruit juice.'}]},
   'Hivital':{tier:3,de:'Spanische Marke. Preis-Leistungs-Sieger im europäischen Markt.',en:'Spanish brand. Outstanding value for money in the European market.',notes:[]},
   'MGX':{tier:3,de:'Magnesium Experten (SKYVE Atlas GmbH). Deutsche Nischenmarke für verschiedene Magnesium-Verbindungen.',en:'Magnesium Experts (SKYVE Atlas GmbH). German niche brand for various magnesium compounds.',notes:[]},
   'Naturecan':{tier:3,de:'UK-Marke (gegr. von Ex-Myprotein CEO). Exzellent bei CBD-Produkten, solide bei normalen Supplements.',en:'UK brand (founded by ex-Myprotein CEO). Excellent for CBD products, solid for standard supplements.',notes:[]},
