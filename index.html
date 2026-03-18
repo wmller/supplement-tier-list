@@ -316,7 +316,7 @@
         <div class="tier-name">High Reliability</div>
         <div class="tier-desc" data-i18n="t2desc"></div>
       </div>
-      <div class="tier-count">32 <span data-i18n="brandsWord"></span></div>
+      <div class="tier-count">33 <span data-i18n="brandsWord"></span></div>
       <div class="tier-chevron">›</div>
     </div>
     <div class="brand-grid">
@@ -349,6 +349,7 @@
       <div class="brand-card" onclick="showDetail('Swanson')"><div class="brand-dot"></div><div><div class="brand-name">Swanson</div></div></div>
       <div class="brand-card" onclick="showDetail('TNT')"><div class="brand-dot"></div><div><div class="brand-name">TNT</div></div></div>
       <div class="brand-card" onclick="showDetail('Vetain')"><div class="brand-dot"></div><div><div class="brand-name">Vetain</div></div></div>
+      <div class="brand-card" onclick="showDetail('VitaBright')"><div class="brand-dot"></div><div><div class="brand-name">VitaBright</div></div></div>
       <div class="brand-card" onclick="showDetail('Vitaworld')"><div class="brand-dot"></div><div><div class="brand-name">Vitaworld</div></div></div>
       <div class="brand-card" onclick="showDetail('Wehle Sports')"><div class="brand-dot"></div><div><div class="brand-name">Wehle Sports</div></div></div>
       <div class="brand-card" onclick="showDetail('WFN')"><div class="brand-dot"></div><div><div class="brand-name">WFN</div></div></div>
@@ -363,7 +364,7 @@
         <div class="tier-name">Solid Standard</div>
         <div class="tier-desc" data-i18n="t3desc"></div>
       </div>
-      <div class="tier-count">45 <span data-i18n="brandsWord"></span></div>
+      <div class="tier-count">46 <span data-i18n="brandsWord"></span></div>
       <div class="tier-chevron">›</div>
     </div>
     <div class="brand-grid">
@@ -405,6 +406,7 @@
       <div class="brand-card" onclick="showDetail('Sanotact')"><div class="brand-dot"></div><div><div class="brand-name">Sanotact</div></div></div>
       <div class="brand-card" onclick="showDetail('Scheunengut')"><div class="brand-dot"></div><div><div class="brand-name">Scheunengut</div></div></div>
       <div class="brand-card" onclick="showDetail('Syglabs')"><div class="brand-dot"></div><div><div class="brand-name">Syglabs</div></div></div>
+      <div class="brand-card" onclick="showDetail('Vegavero')"><div class="brand-dot"></div><div><div class="brand-name">Vegavero</div></div></div>
       <div class="brand-card" onclick="showDetail('Vihado')"><div class="brand-dot"></div><div><div class="brand-name">Vihado</div></div></div>
       <div class="brand-card" onclick="showDetail('Vit4ever')"><div class="brand-dot"></div><div><div class="brand-name">Vit4ever</div></div></div>
       <div class="brand-card" onclick="showDetail('Vita2You')"><div class="brand-dot"></div><div><div class="brand-name">Vita2You</div></div></div>
@@ -634,6 +636,10 @@ const B = {
     de:'Vetain GmbH, Zorneding bei München (gegr. 2020). Bio-zertifiziert (DE-ÖKO-007), plastikfreie Verpackung (Sonoco GreenCan), Laboranalysen via Agrolab öffentlich, IFS-zertifiziert, Made in Germany.',
     en:'Vetain GmbH, Zorneding near Munich (founded 2020). Organic certified (DE-ÖKO-007), plastic-free packaging (Sonoco GreenCan), Agrolab analyses publicly available on product pages, IFS-certified, Made in Germany.',
     notes:[{t:'success',de:'200.000+ Kunden, ~20 Mio. € Umsatz. Starke Tier-1-Elemente bei Transparenz und Verpackung.',en:'200,000+ customers, ~€20M revenue. Strong Tier-1 elements for transparency and packaging.'}]},
+  'VitaBright':{tier:2,
+    de:'Handelsmarke von Vouch Together Limited, South Croydon, UK (gegr. 2010). Familienunternehmen, kein PE-Investor. EU-Niederlassung: Vouch Together Ltd, Friedrichstraße 114a, Berlin. GMP-zertifiziert und BRCGS AA+ akkreditiert – der höchste Lebensmittelsicherheitsstandard der Branche. Unabhängige Labortests durch Eurofins und Campden BRI. Soil Association-zertifiziert für Bio-Rohstoffe. Made in Britain-Mitglied. BBC Good Food Awards 2025 (mehrere Produkte). Über 3 Mio. Kunden, bei Boots und Superdrug gelistet.',
+    en:'Trading name of Vouch Together Limited, South Croydon, UK (founded 2010). Family-owned business, no PE investor. EU entity: Vouch Together Ltd, Friedrichstraße 114a, Berlin. GMP-certified and BRCGS AA+ accredited – the highest food safety standard in the sector. Independent lab testing by Eurofins and Campden BRI. Soil Association certified for organic ingredients. Made in Britain member. BBC Good Food Awards 2025 (multiple products). 3M+ customers, listed at Boots and Superdrug.',
+    notes:[{t:'info',de:'Keine öffentlichen per-Charge-COAs auf den Produktseiten. Nicht auf der Kölner Liste. Kein Fokus auf patentierte Markenrohstoffe. Trotzdem eines der transparentesten und am besten zertifizierten britischen Labels auf dem deutschen Markt.',en:'No public per-batch COAs on product pages. Not on Kölner Liste. No focus on patented branded ingredients. Still one of the most transparent and best-certified British labels available in Germany.'}]},
   'Vitaworld':{tier:2,de:'Vita-World GmbH, Taunusstein. Veröffentlicht echte Analyse-Zertifikate (PDFs) direkt bei den Produkten. Sehr transparent und preiswert.',en:'Vita-World GmbH, Taunusstein. Publishes actual analysis certificates (PDFs) directly on product pages. Very transparent and affordable.',notes:[]},
   'Wehle Sports':{tier:2,de:'Solide deutsche Sportmarke mit gutem Preis-Leistungs-Verhältnis.',en:'Solid German sports brand with good value for money.',notes:[]},
   'WFN':{tier:2,de:'Evidenzbasierte Sportnahrung mit Fokus auf wissenschaftlich belegte Dosierungen.',en:'Evidence-based sports nutrition with a focus on scientifically validated dosages.',notes:[]},
@@ -682,6 +688,12 @@ const B = {
   'Sanotact':{tier:3,de:'Drogerie-Riese aus Münster. Breites Sortiment, solider Standard.',en:'Drugstore giant from Münster. Wide range, solid standard.',notes:[]},
   'Scheunengut':{tier:3,de:'Marketing-Brand, aber Inhalt okay. Standard-Qualität.',en:'Marketing-heavy brand, but content is acceptable. Standard quality.',notes:[]},
   'Syglabs':{tier:3,de:'Lohnhersteller mit Eigenmarke. Günstige Preise.',en:'Contract manufacturer with own brand. Affordable prices.',notes:[]},
+  'Vegavero':{tier:3,
+    de:'Marke der Vanatari International GmbH, Pankstraße 8–10, Berlin. 2014 als Berliner Familienbetrieb von Katrin Horstmann und Alexander Krol gegründet. Seit Dezember 2020 mehrheitlich im Besitz der USP Group (polnischer OTC-Pharmakonzern, ~1.000 Mitarbeiter, Ibuprom/Apap/Gripex). Operiert weiterhin als unabhängige Einheit. Unabhängige ICP-MS-Labortests, Ergebnisse online veröffentlicht, COAs auf Anfrage. 100% vegan, keine tierischen Hilfsstoffe, eigene Rezepturen. Mehrere Sub-Marken: Vegavero, Vegavero Pure, Vegavital, Alovo.',
+    en:'Brand of Vanatari International GmbH, Pankstraße 8–10, Berlin. Founded 2014 as a Berlin family business by Katrin Horstmann and Alexander Krol. Majority-owned since December 2020 by USP Group (Polish OTC pharma group, ~1,000 employees, Ibuprom/Apap/Gripex brands). Still operates as an independent unit. Independent ICP-MS lab tests with results published online, COAs available on request. 100% vegan, no animal-derived excipients, own formulations. Multiple sub-brands: Vegavero, Vegavero Pure, Vegavital, Alovo.',
+    notes:[
+      {t:'info',de:'Mehrheitsübernahme durch USP Group Dez. 2020 – kein unabhängiges Familienunternehmen mehr. Gründer noch operativ involviert. Keine GMP-Zertifizierung öffentlich nachgewiesen. Oberes Tier-3-Segment: Labortransparenz besser als Durchschnitt.',en:'Majority takeover by USP Group Dec. 2020 – no longer an independent family business. Founders still operationally involved. No GMP certification publicly documented. Upper Tier 3: lab transparency above average.'}
+    ]},
   'Vihado':{tier:3,de:'Etablierte Apotheken-Marke (Vihado GmbH & Co. KG, Kehl). Reguläre Laboranalysen und Herkunftsnachweise.',en:'Established pharmacy brand (Vihado GmbH & Co. KG, Kehl). Regular laboratory analyses and certificates of origin.',notes:[]},
   'Vit4ever':{tier:3,de:'VitaminVersand24. Schwestermarken: GEN, EWL. Der Preis-Leistungs-Klassiker für Fitness-Lifestyle-Kunden.',en:'VitaminVersand24. Sister brands: GEN, EWL. The classic value-for-money choice for fitness lifestyle customers.',notes:[]},
   'Vita2You':{tier:3,de:'Günstige Standardware. Sicher, aber ohne besondere Merkmale.',en:'Affordable standard products. Safe but without standout features.',notes:[]},
